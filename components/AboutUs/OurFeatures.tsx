@@ -1,11 +1,10 @@
 import Image from "next/image";
 
-// ---- Types ----
 type TitleBlock = {
   subtitle: string;
-  titlePrefix: string; // "Geniune"
-  titleBold: string; // "Partner In Every Aspect"
-  titleSuffix: string; // "Of Development"
+  titlePrefix: string;
+  titleBold: string;
+  titleSuffix: string;
 };
 
 type FeatureItem = {
@@ -103,7 +102,7 @@ const cardSixBlocks: CardSix[] = [
   },
 ];
 
-// ---- Component ----
+
 export default function OurFeatures() {
   return (
     <>

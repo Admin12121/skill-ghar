@@ -1,4 +1,4 @@
-import PageBanner from "@/components/Common/PageBanner";
+import PageBanner from "@/components/global/PageBanner";
 import Link from "next/link";
 import Image from "next/image";
 

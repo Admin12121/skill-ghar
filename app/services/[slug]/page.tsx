@@ -1,4 +1,4 @@
-import PageBanner from "@/components/Common/PageBanner";
+import PageBanner from "@/components/global/PageBanner";
 import ServiceDetailsContent from "@/components/Services/ServiceDetailsContent";
 import { getServiceBySlug, getAllServiceSlugs, getServicesList } from "@/lib/services";
 import { notFound } from "next/navigation";

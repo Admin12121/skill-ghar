@@ -12,17 +12,17 @@ interface ServiceData {
   excerpt: string;
   overview: string;
   content: string;
-  features: Array<{
+  features?: Array<{
     icon: string;
     title: string;
   }>;
-  testimonial: {
+  testimonial?: {
     quote: string;
     author: string;
     role: string;
     image: string;
   };
-  servicesOffered: Array<{
+  servicesOffered?: Array<{
     title: string;
     description: string;
   }>;
@@ -78,88 +78,94 @@ const ServiceDetailsContent = ({ data, servicesList }: ServiceDetailsContentProp
             </div>
 
             {/* Features Grid */}
-            <div className="row justify-content-center mb-2">
-              {data.features.map((feature, index) => (
-                <div key={index} className="col-md-3 col-6">
-                  <div className="feature-card style-one mb-30">
-                    <Image
-                      src={feature.icon}
-                      alt={feature.title}
-                      width={40}
-                      height={40}
-                    />
-                    <h3 className="fs-16 font-primary fw-semibold mb-0 pe-xxl-5">
-                      {feature.title}
-                    </h3>
+            {data.features && data.features.length > 0 && (
+              <div className="row justify-content-center mb-2">
+                {data.features.map((feature, index) => (
+                  <div key={index} className="col-md-3 col-6">
+                    <div className="feature-card style-one mb-30">
+                      <Image
+                        src={feature.icon}
+                        alt={feature.title}
+                        width={40}
+                        height={40}
+                      />
+                      <h3 className="fs-16 font-primary fw-semibold mb-0 pe-xxl-5">
+                        {feature.title}
+                      </h3>
+                    </div>
                   </div>
-                </div>
-              ))}
-            </div>
+                ))}
+              </div>
+            )}
 
             {/* Testimonial Section */}
-            <div className="row mb-2">
-              <div className="col-xxl-8 col-xl-7 col-lg-8 col-md-7 pe-xl-4">
-                <div className="testimonial-card style-two bg-gray round-10 mb-30">
-                  <div className="d-flex flex-wrap align-items-center justify-content-between">
-                    <span className="quote-icon bg_secondary d-flex flex-wrap align-items-center justify-content-center rounded-circle mb-0">
-                      <Image
-                        src="/images/icons/quote-large.svg"
-                        alt="Icon"
-                        width={38}
-                        height={34}
-                      />
+            {data.testimonial && (
+              <div className="row mb-2">
+                <div className="col-xxl-8 col-xl-7 col-lg-8 col-md-7 pe-xl-4">
+                  <div className="testimonial-card style-two bg-gray round-10 mb-30">
+                    <div className="d-flex flex-wrap align-items-center justify-content-between">
+                      <span className="quote-icon bg_secondary d-flex flex-wrap align-items-center justify-content-center rounded-circle mb-0">
+                        <Image
+                          src="/images/icons/quote-large.svg"
+                          alt="Icon"
+                          width={38}
+                          height={34}
+                        />
+                      </span>
+                      <ul className="rating list-unstyled mb-0 w-50 text-end">
+                        {[...Array(5)].map((_, i) => (
+                          <li key={i}>
+                            <Image
+                              src="/images/icons/star.svg"
+                              alt="Star"
+                              width={19}
+                              height={18}
+                            />
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+                    <p className="fw-medium text-title">
+                      <q>{data.testimonial.quote}</q>
+                    </p>
+                    <h6 className="fs-20 font-primary fw-semibold position-relative text-title mb-1">
+                      {data.testimonial.author}
+                    </h6>
+                    <span className="fs-15 fw-normal d-block text-para">
+                      {data.testimonial.role}
                     </span>
-                    <ul className="rating list-unstyled mb-0 w-50 text-end">
-                      {[...Array(5)].map((_, i) => (
-                        <li key={i}>
-                          <Image
-                            src="/images/icons/star.svg"
-                            alt="Star"
-                            width={19}
-                            height={18}
-                          />
-                        </li>
-                      ))}
-                    </ul>
                   </div>
-                  <p className="fw-medium text-title">
-                    <q>{data.testimonial.quote}</q>
-                  </p>
-                  <h6 className="fs-20 font-primary fw-semibold position-relative text-title mb-1">
-                    {data.testimonial.author}
-                  </h6>
-                  <span className="fs-15 fw-normal d-block text-para">
-                    {data.testimonial.role}
-                  </span>
+                </div>
+
+                <div className="col-xxl-4 col-xl-5 col-lg-4 col-md-5 ps-xl-0 ps-lg-4 pe-xl-2">
+                  <div className="single-img round-10 mb-30">
+                    <Image
+                      src={data.testimonial.image}
+                      alt="testimonial"
+                      className="round-10"
+                      width={570}
+                      height={703}
+                    />
+                  </div>
                 </div>
               </div>
+            )}
 
-              <div className="col-xxl-4 col-xl-5 col-lg-4 col-md-5 ps-xl-0 ps-lg-4 pe-xl-2">
-                <div className="single-img round-10 mb-30">
-                  <Image
-                    src={data.testimonial.image}
-                    alt="testimonial"
-                    className="round-10"
-                    width={570}
-                    height={703}
-                  />
-                </div>
+            {data.servicesOffered && data.servicesOffered.length > 0 && (
+              <div className="single-para">
+                <h6>Services Offered</h6>
+                <ul className="feature-item-list style-one list-unstyled">
+                  {data.servicesOffered.map((service, index) => (
+                    <li key={index} className="position-relative">
+                      <span className="text-title fw-semibold me-1">
+                        {service.title} :
+                      </span>
+                      {service.description}
+                    </li>
+                  ))}
+                </ul>
               </div>
-            </div>
-
-            <div className="single-para">
-              <h6>Services Offered</h6>
-              <ul className="feature-item-list style-one list-unstyled">
-                {data.servicesOffered.map((service, index) => (
-                  <li key={index} className="position-relative">
-                    <span className="text-title fw-semibold me-1">
-                      {service.title} :
-                    </span>
-                    {service.description}
-                  </li>
-                ))}
-              </ul>
-            </div>
+            )}
 
             {/* FAQ Accordion */}
             <div className="single-para">

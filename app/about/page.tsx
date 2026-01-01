@@ -1,8 +1,8 @@
-import AboutUsContent from "@/components/Common/AboutUsContent";
-import AnimationMovingText from "@/components/Common/AnimationMovingText";
-import Cta from "@/components/Common/Cta";
-import MeetTheTeams from "@/components/Common/MeetTheTeams";
-import PageBanner from "@/components/Common/PageBanner";
+import AboutUsContent from "@/components/global/AboutUsContent";
+import AnimationMovingText from "@/components/global/AnimationMovingText";
+import Cta from "@/components/global/Cta";
+import MeetTheTeams from "@/components/global/MeetTheTeams";
+import PageBanner from "@/components/global/PageBanner";
 
 export default function Page() {
   return (

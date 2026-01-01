@@ -16,17 +16,17 @@ export interface ServiceData {
   excerpt: string;
   overview: string;
   content: string;
-  features: Array<{
+  features?: Array<{
     icon: string;
     title: string;
   }>;
-  testimonial: {
+  testimonial?: {
     quote: string;
     author: string;
     role: string;
     image: string;
   };
-  servicesOffered: Array<{
+  servicesOffered?: Array<{
     title: string;
     description: string;
   }>;

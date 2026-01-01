@@ -1,7 +1,6 @@
 import React from "react";
 
 const AnimationMovingText = () => {
-  // Dynamic data for moving text items
   const textItems = [
     "FREE IN-HOME CONSULTATIONS",
     "CUSTOM DESIGN SOLUTIONS",
@@ -13,7 +12,6 @@ const AnimationMovingText = () => {
     "24/7 CUSTOMER ASSISTANCE",
   ];
 
-  // Duplicate the items to create the seamless loop effect
   const duplicatedItems = [...textItems, ...textItems];
 
   return (
