@@ -16,13 +16,6 @@ interface Project {
   link: string;
 }
 
-interface Filters {
-  status: string;
-  type: string;
-  location: string;
-  budget: string;
-}
-
 // Move allProjects outside the component since it's static data
 const allProjects: Project[] = [
   {
@@ -119,34 +112,12 @@ const allProjects: Project[] = [
 
 const ProjectsContent = () => {
   // State management with proper typing
-  const [filteredProjects, setFilteredProjects] =
-    useState<Project[]>(allProjects);
   const [currentPage, setCurrentPage] = useState<number>(1);
-  const [filters, setFilters] = useState<Filters>({
-    status: "",
-    type: "",
-    location: "",
-    budget: "",
-  });
   const projectsPerPage = 6;
-  const totalPages = Math.ceil(filteredProjects.length / projectsPerPage);
+  const totalPages = Math.ceil(allProjects.length / projectsPerPage);
 
   // Ref for the container element
   const containerRef = useRef<HTMLDivElement>(null);
-
-  // Apply filters when filters change
-  useEffect(() => {
-    const filtered = allProjects.filter((project) => {
-      return (
-        (filters.status === "" || project.status === filters.status) &&
-        (filters.type === "" || project.type === filters.type) &&
-        (filters.location === "" || project.location === filters.location) &&
-        (filters.budget === "" || project.budget === filters.budget)
-      );
-    });
-    setFilteredProjects(filtered);
-    setCurrentPage(1); // Reset to first page when filters change
-  }, [filters]); // allProjects is now outside the component, so it doesn't need to be in the dependency array
 
   // Scroll to top when page changes
   useEffect(() => {
@@ -158,21 +129,6 @@ const ProjectsContent = () => {
     }
   }, [currentPage]);
 
-  // Handle filter changes
-  const handleFilterChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
-    const { name, value } = e.target;
-    setFilters((prev) => ({
-      ...prev,
-      [name]: value,
-    }));
-  };
-
-  // Handle search button click
-  const handleSearch = (e: React.FormEvent<HTMLButtonElement>) => {
-    e.preventDefault();
-    // Filtering is already handled by useEffect
-  };
-
   // Handle pagination
   const paginate = (pageNumber: number) => {
     if (pageNumber > 0 && pageNumber <= totalPages) {
@@ -183,7 +139,7 @@ const ProjectsContent = () => {
   // Get current projects for display
   const indexOfLastProject = currentPage * projectsPerPage;
   const indexOfFirstProject = indexOfLastProject - projectsPerPage;
-  const currentProjects = filteredProjects.slice(
+  const currentProjects = allProjects.slice(
     indexOfFirstProject,
     indexOfLastProject
   );
@@ -191,81 +147,6 @@ const ProjectsContent = () => {
   return (
     <>
       <div ref={containerRef} className="container ptb-120">
-        <div className="project-filter-box style-one d-flex flex-wrap align-items-end round-10 mb-40">
-          <div className="form-group mb-20">
-            <label className="fs-14 fw-semibold text-title d-block mb-1">
-              Project Status
-            </label>
-            <select
-              className="w-100 ht-48 border-0 bg-gray outline-0"
-              name="status"
-              value={filters.status}
-              onChange={handleFilterChange}
-            >
-              <option value="">All Status</option>
-              <option value="Under Construction">Under Construction</option>
-              <option value="Completed">Completed</option>
-            </select>
-          </div>
-          <div className="form-group mb-20">
-            <label className="fs-14 fw-semibold text-title d-block mb-1">
-              Project Type
-            </label>
-            <select
-              className="w-100 ht-48 border-0 bg-gray outline-0"
-              name="type"
-              value={filters.type}
-              onChange={handleFilterChange}
-            >
-              <option value="">All Types</option>
-              <option value="Residential">Residential</option>
-              <option value="Commercial">Commercial</option>
-              <option value="Public">Public</option>
-            </select>
-          </div>
-          <div className="form-group mb-20">
-            <label className="fs-14 fw-semibold text-title d-block mb-1">
-              Location
-            </label>
-            <select
-              className="w-100 ht-48 border-0 bg-gray outline-0"
-              name="location"
-              value={filters.location}
-              onChange={handleFilterChange}
-            >
-              <option value="">All Locations</option>
-              <option value="Florida">Florida</option>
-              <option value="California">California</option>
-              <option value="New York">New York</option>
-            </select>
-          </div>
-          <div className="form-group mb-20">
-            <label className="fs-14 fw-semibold text-title d-block mb-1">
-              Project Budget
-            </label>
-            <select
-              className="w-100 ht-48 border-0 bg-gray outline-0"
-              name="budget"
-              value={filters.budget}
-              onChange={handleFilterChange}
-            >
-              <option value="">All Budgets</option>
-              <option value="$10 - $15K">$10 - $15K</option>
-              <option value="$15 - $25K">$15 - $25K</option>
-              <option value="$20 - $35K">$20 - $35K</option>
-            </select>
-          </div>
-          <div className="form-group mb-20">
-            <button
-              className="btn style-two d-block w-100 p-0"
-              onClick={handleSearch}
-            >
-              <span className="btn-text d-block w-100 fw-semibold position-relative transition">
-                Search Projects
-              </span>
-            </button>
-          </div>
-        </div>
         <div className="row justify-content-center">
           {currentProjects.length > 0 ? (
             currentProjects.map((project, index) => (
@@ -302,7 +183,7 @@ const ProjectsContent = () => {
           )}
         </div>
         {/* Pagination */}
-        {filteredProjects.length > projectsPerPage && (
+        {allProjects.length > projectsPerPage && (
           <ul className="page-nav pagination justify-content-center mb-0 mt-lg-4">
             <li className="page-item">
               <button

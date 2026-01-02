@@ -1,4 +1,11 @@
-export const menus = [
+export interface MenuItem {
+  id?: string;
+  label: string;
+  href?: string;
+  children?: MenuItem[];
+}
+
+export const staticMenus: MenuItem[] = [
   {
     label: "About",
     href: "/about",
@@ -6,23 +13,15 @@ export const menus = [
   {
     id: "services",
     label: "Services",
-    children: [
-      { label: "Home Renovation", href: "/services/home-renovation/" },
-      {
-        label: "Modular kitchen", href: "/services/modular-kitchen/"
-      },
-      {
-        label: "Water Proofing", href: "/services/water-proofing/"
-      },
-      {
-        label: "Roofing", href: "/services/roofing/"
-      },
-      { label: "Washroom Re-modelling", href: "/services/washroom-re-modelling/" },
-      { label: "Electric and Plumbing", href: "/services/electric-and-plumbing/" },
-    ],
+    children: [],
   },
   {
-    label: "Projects", href: "/projects/",
+    label: "Projects",
+    href: "/projects/",
   },
-  { id: "contact", label: "Contact Us", href: "/contact-us/" },
+  { 
+    id: "contact", 
+    label: "Contact Us", 
+    href: "/contact-us/" 
+  },
 ];

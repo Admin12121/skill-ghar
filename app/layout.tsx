@@ -9,11 +9,13 @@ import "../styles/footer.css";
 import "../styles/style.css";
 import "../styles/responsive.css";
 
-
 import type { Metadata } from "next";
 import { DM_Sans, Exo, Martian_Mono } from "next/font/google";
 import SiteHeader from "@/components/siteheader";
 import Footer from "@/components/sitefooter";
+import { getServicesForMenu } from "@/lib/services";
+import { staticMenus } from "@/config/site";
+import GoTop from "@/components/global/GoTop";
 
 const dmSans = DM_Sans({
   variable: "--font-dm-sans",
@@ -42,14 +44,25 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  const services = getServicesForMenu();
+  const menus = staticMenus.map((menu) => {
+    if (menu.id === "services") {
+      return {
+        ...menu,
+        children: services,
+      };
+    }
+    return menu;
+  });
   return (
     <html lang="en">
       <body
         className={`${dmSans.variable} ${exo.variable} ${martianMono.variable}`}
       >
-        <SiteHeader />
+        <SiteHeader menus={menus} />
         {children}
         <Footer />
+        <GoTop/>
       </body>
     </html>
   );

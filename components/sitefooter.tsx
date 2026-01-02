@@ -1,17 +1,15 @@
-import React from "react";
 import Link from "next/link";
 import { FlickeringGrid } from "./flickering-grid";
 import Image from "next/image";
 
-// Dynamic footer data
 const footerData = {
   socialLinks: [
     {
-      icon: "ri-facebook-fill text-blue-600!",
+      icon: "ri-facebook-fill text-black!",
       url: "https://www.facebook.com/profile.php?id=61572493181532",
     },
     {
-      icon: "ri-instagram-line text-pink-500!",
+      icon: "ri-instagram-line text-black!",
       url: "https://www.instagram.com/skill_griha/",
     },
     {

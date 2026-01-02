@@ -4,10 +4,10 @@ import ProjectDetailsContent from "@/components/Projects/ProjectDetailsContent";
 
 export default function Page() {
   return (
-    <>
+    <main>
       <PageBanner pageTitle="Project Details" />
 
       <ProjectDetailsContent />
-    </>
+    </main>
   );
 }

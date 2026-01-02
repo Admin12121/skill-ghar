@@ -105,3 +105,22 @@ export function getServicesList(): ServiceListItem[] {
       };
     });
 }
+
+// Function to get services for menu
+export function getServicesForMenu() {
+  const fileNames = fs.readdirSync(servicesDirectory);
+
+  return fileNames
+    .filter((fileName) => fileName.endsWith(".mdx"))
+    .map((fileName) => {
+      const fullPath = path.join(servicesDirectory, fileName);
+      const fileContents = fs.readFileSync(fullPath, "utf8");
+      const { data } = matter(fileContents);
+      const slug = fileName.replace(/\.mdx$/, "");
+      
+      return {
+        label: data.title,
+        href: `/services/${slug}`,
+      };
+    });
+}

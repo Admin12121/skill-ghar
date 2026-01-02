@@ -1,23 +1,19 @@
 "use client";
 
-import React, { useState, useEffect } from "react";
+import  { useState, useEffect } from "react";
 import Offcanvas from "react-bootstrap/Offcanvas";
 import { usePathname } from "next/navigation";
 import Link from "next/link";
 import Image from "next/image";
-// Menus data
-// import { menus } from "./Menus";
-import { menus } from "@/config/site";
 import { Phone } from "lucide-react";
 
-// Define types for menu items
 type MenuItem = {
   id?: string;
   label: string;
   href?: string;
   children?: MenuItem[];
 };
-// Recursive menu component for desktop
+
 type MenuItemsProps = { items: MenuItem[]; pathname: string };
 const MenuItems = ({ items, pathname }: MenuItemsProps) => {
   return (
@@ -49,7 +45,7 @@ const MenuItems = ({ items, pathname }: MenuItemsProps) => {
     </>
   );
 };
-// Recursive menu component for mobile
+
 type MobileMenuItemsProps = {
   items: MenuItem[];
   pathname: string;
@@ -69,7 +65,6 @@ const MobileMenuItems = ({
   return (
     <>
       {items.map((item, index) => {
-        // Generate unique ID for each menu item
         const itemId = parentPath ? `${parentPath}-${index}` : `${index}`;
         const isOpen = openDropdowns.includes(itemId);
         const hasChildren = item.children && item.children.length > 0;
@@ -130,7 +125,7 @@ const MobileMenuItems = ({
   );
 };
 
-function SiteHeader() {
+function SiteHeader({menus}: {menus: MenuItem[]}) {
   const pathname = usePathname();
 
   useEffect(() => {

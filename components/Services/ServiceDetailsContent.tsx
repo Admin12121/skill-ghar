@@ -235,7 +235,7 @@ const ServiceDetailsContent = ({ data, servicesList }: ServiceDetailsContentProp
                 ))}
               </ul>
             </div>
-            <BookAVisitForm />
+            <BookAVisitForm serviceName={data.title} />
           </aside>
         </div>
       </div>
