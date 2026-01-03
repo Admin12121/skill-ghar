@@ -5,26 +5,26 @@ const AboutUsContent = () => {
   const counterData = [
     {
       id: 1,
-      title: "GLOBAL REACH",
-      value: "85",
+      title: "EXPERIENCE",
+      value: "10",
       suffix: "+",
-      description: "Offices Worldwide",
+      description: "Years in Business",
       bgClass: "bg-1",
     },
     {
       id: 2,
-      title: "LOCAL EXPERTISE",
-      value: "3000",
+      title: "EXPERTISE",
+      value: "50",
       suffix: "+",
-      description: "Employees",
+      description: "Skilled Professionals",
       bgClass: "bg-2",
     },
     {
       id: 3,
-      title: "OUR IMPACT",
-      value: "3",
-      suffix: "K+",
-      description: "Projects Done",
+      title: "SUCCESS",
+      value: "500",
+      suffix: "+",
+      description: "Happy Customers",
       bgClass: "bg-3",
     },
   ];
@@ -63,9 +63,9 @@ const AboutUsContent = () => {
                   ABOUT US
                 </h6>
                 <h2 className="section-title style-one text-title">
-                  At{" "}
+                  Skill Griha is a{" "}
                   <span className="fw-black">
-                    Edifico our commitment to
+                    home renovation expert
                     <span className="d-inline-block mx-2">
                       <Image
                         src="/images/about/about-thumb-2.jpg"
@@ -74,15 +74,13 @@ const AboutUsContent = () => {
                         height={32}
                       />
                     </span>
-                    real estate is unwavering.
+                    that helps people improve,
                   </span>{" "}
-                  Backed by years of expertise and a contemporary approach
+                  repair, and redesign their homes in a simple way
                 </h2>
                 <div className="about-subcontent">
                   <p className="pe-xxl-5">
-                    Home renovation is the process of improving or modernizing a
-                    residential property to enhance its functionality, comfort,
-                    and aesthetic It can involve anything from small interior.
+                    We believe a home should be comfortable, cozy, safe, and beautiful — and our job is to help you create that kind of space. We work with homeowners who want quality work, clear communication, and a team they can trust.
                   </p>
                   <div className="row justify-content-center">
                     {counterData.map((counter) => (

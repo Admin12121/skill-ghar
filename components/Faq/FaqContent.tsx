@@ -1,79 +1,64 @@
 "use client";
 
+import { Home } from "lucide-react";
 import { useState } from "react";
 
 const FaqContent = () => {
   const faqData = [
     {
       id: 1,
-      question: "Can I Consult You Before Buying Land Or Property?",
+      question: "Why should I choose Skill Griha for renovation?",
       answer: [
-        "Yes. We offer pre-purchase consultations to help you make an informed decision.",
-        "Our review typically includes zoning/by-law checks, basic feasibility (utilities, access, setbacks), high-level budget ranges, and risk items to watch for. If you proceed with us, the consultation fee is credited to your project.",
+        "Because we prioritize quality, professionalism, and transparent service while delivering reliable results.",
+        "Our experienced team focuses on doing the job properly and making customers happy with attention to detail and clear communication.",
       ],
     },
     {
       id: 2,
-      question: "Are Your Services Available Outside The City?",
+      question: "Do you provide project cost estimates?",
       answer: [
-        "We primarily serve the greater metro area, but we do take projects outside the city.",
-        "For out-of-city work, we schedule site visits in advance and apply a mobilization/travel fee. Remote planning and coordination are fully supported via video calls and shared project dashboards.",
+        "Yes. We provide a clear and transparent quotation after site assessment and requirement discussion.",
+        "Our pricing is straightforward with no hidden costs, so you know exactly what you're paying for.",
       ],
     },
     {
       id: 3,
-      question: "Do You Manage Properties For Landlords Or Investors?",
+      question: "Will someone supervise the project?",
       answer: [
-        "Yes. We provide end-to-end property management for residential and light commercial assets.",
-        "Services include tenant screening, leasing, rent collection, preventive maintenance, emergency repairs, periodic inspections, and monthly/annual financial reporting. Packages are available for single units and portfolios.",
+        "Absolutely. Each project is handled by a dedicated supervisor to maintain quality control and coordination.",
+        "We ensure that work is done properly, safely, and neatly with continuous oversight throughout the project.",
       ],
     },
     {
       id: 4,
-      question: "What Types Of Properties Do You Handle?",
+      question: "Do you use certified materials?",
       answer: [
-        "Residential: custom homes, additions, extensions, and full renovations.",
-        "Commercial: office fit-outs, retail, clinics, and light industrial/warehouse improvements. We also handle site works, foundations, and exterior upgrades.",
+        "Yes, only tested and trusted materials are used to ensure durability.",
+        "We use premium quality materials and fittings from reliable brands to guarantee long-lasting results.",
       ],
     },
     {
       id: 5,
-      question: "Do You Offer Custom Home Construction?",
+      question: "Do you handle both small and large renovation projects?",
       answer: [
-        "Absolutely. We deliver design-build or build-to-plan, depending on your needs.",
-        "Our scope can cover architecture coordination, structural/MEP, permitting, procurement, construction, interior finishes, and handover. Choose fixed-price or cost-plus with open-book accounting.",
+        "Yes. From minor upgrades to complete remodeling \u2014 we manage all project sizes.",
+        "Whether you want to renovate a room or your whole house, our team makes the process smooth and stress-free.",
       ],
     },
     {
       id: 6,
-      question: "How Long Does A Construction Project Usually Take?",
+      question: "Is waterproofing guaranteed?",
       answer: [
-        "Typical ranges: small renovations 4–12 weeks, single-family homes 6–12 months, commercial interiors 8–16 weeks.",
-        "Timelines depend on design complexity, approvals, material lead times, and site conditions. We share a Gantt schedule at kickoff and update it weekly.",
+        "We use industry-standard solutions and provide guarantee coverage depending on the selected service.",
+        "Our waterproofing work is reliable and designed to protect your home from leaks and moisture damage for years.",
       ],
     },
     {
       id: 7,
-      question: "Is Your Pricing Flexible Or Fixed?",
+      question: "Do you work with customized designs?",
       answer: [
-        "Both. During pre-construction we provide detailed estimates and value-engineering options.",
-        "Once drawings/specs are locked, we can sign a fixed-price contract. If you prefer flexibility for evolving scopes, we offer a cost-plus model with transparent reporting.",
-      ],
-    },
-    {
-      id: 8,
-      question: "How Long Does A Typical Construction Project Take?",
-      answer: [
-        "Key drivers are approvals, scope size, structural complexity, and supply chain.",
-        "To keep schedules tight, we finalize selections early, lock critical materials, and run weekly coordination meetings. Weather buffers and inspection windows are built into the plan.",
-      ],
-    },
-    {
-      id: 9,
-      question: "Is Your Pricing Fixed Or Customized?",
-      answer: [
-        "Pricing is customized to your scope, finishes, and timeline.",
-        "We can bundle design, permits, and construction or keep them separate. Payment milestones usually follow design sign-off, mobilization, key progress checkpoints, and practical completion.",
+        "Yes, every project is tailor-made to meet the client's needs and preferences.",
+        "We listen to your requirements, understand your space, and create solutions that match your vision and lifestyle.",
       ],
     },
   ];
@@ -87,8 +72,21 @@ const FaqContent = () => {
   };
 
   return (
-    <>
+    <main>
       <div className="container ptb-120">
+        <div className="row">
+          <div className="col-xl-8 offset-xl-2 col-md-10 offset-md-1 text-center px-xxl-5 mb-60">
+            <h6 className="section-subtitle style-one fs-13 ls-1 font-optional fw-semibold position-relative text_primary mb-20 flex flex-row gap-2 justify-center items-center">
+               <Home className="size-4" />
+              FREQUENTLY ASKED QUESTIONS
+            </h6>
+            <h2 className="section-title style-one text-title px-xxl-5 mb-0">
+              Common{" "}
+              <span className="fw-black">Questions About Our Services</span>{" "}
+              Answered
+            </h2>
+          </div>
+        </div>
         <div className="row">
           <div className="col-xl-8 offset-xl-2">
             <div className="accordion style-one">
@@ -142,7 +140,7 @@ const FaqContent = () => {
           </div>
         </div>
       </div>
-    </>
+    </main>
   );
 };
 

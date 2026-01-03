@@ -46,25 +46,25 @@ const HeroBanner = () => {
       backgroundImage: "/images/hero/hero-slide-1.jpg",
       features: [
         {
-          title: "Custom Home Design & Build",
+          title: "Experienced Team",
           description:
-            "We're committed to delivering top-quality craftsmanship, personalized service",
-          linkText: "See All Projects",
-          linkHref: "/projects",
+            "Professional team with years of expertise in home renovation and construction work",
+          linkText: "Why Choose Us",
+          linkHref: "/about",
         },
         {
-          title: "Turnkey Construction Solutions",
+          title: "Premium Finishing",
           description:
-            "Strong focus on timelines and transparency, we make the homebuilding process smooth",
-          linkText: "Our Solutions",
+            "Attention to detail and high-quality finishing that makes your home look beautiful",
+          linkText: "Our Services",
           linkHref: "/services",
         },
         {
-          title: "Quality Materials & Workmanship",
+          title: "Clear Pricing",
           description:
-            "Construction techniques to ensure every project is built to last with licensed expertise",
-          linkText: "Discover More",
-          linkHref: "/services",
+            "Transparent pricing without hidden costs so you know exactly what you're paying for",
+          linkText: "Contact Us",
+          linkHref: "/contact-us",
         },
       ],
     },
@@ -72,25 +72,25 @@ const HeroBanner = () => {
       backgroundImage: "/images/hero/hero-slide-2.jpg",
       features: [
         {
-          title: "Innovative Architectural Planning",
+          title: "Home Renovation",
           description:
-            "Blending creativity and functionality to design spaces that inspire and endure",
-          linkText: "View Designs",
-          linkHref: "/projects",
+            "We redesign and upgrade homes to improve comfort, style, and usability",
+          linkText: "View Details",
+          linkHref: "/services/home-renovation",
         },
         {
-          title: "Sustainable Building Practices",
+          title: "Modular Kitchen",
           description:
-            "Eco-friendly solutions that reduce environmental impact while maximizing efficiency",
-          linkText: "Our Approach",
-          linkHref: "/services",
+            "Smart, stylish, and practical kitchens with quality materials and layouts",
+          linkText: "View Details",
+          linkHref: "/services/modular-kitchen",
         },
         {
-          title: "Expert Project Management",
+          title: "Waterproofing",
           description:
-            "Dedicated teams ensuring smooth execution from concept to completion",
-          linkText: "Learn More",
-          linkHref: "/services",
+            "Protect your home from leakage and dampness with reliable solutions",
+          linkText: "View Details",
+          linkHref: "/services/water-proofing",
         },
       ],
     },
@@ -98,40 +98,40 @@ const HeroBanner = () => {
       backgroundImage: "/images/hero/hero-slide-3.jpg",
       features: [
         {
-          title: "Luxury Interior Finishes",
+          title: "Roofing",
           description:
-            "Premium materials and elegant designs tailored to your lifestyle and vision",
-          linkText: "Explore Interiors",
-          linkHref: "/projects",
+            "Strong and durable roofing with Glass, UPVC, Fibre & Polycarbonate options",
+          linkText: "View Details",
+          linkHref: "/services/roofing",
         },
         {
-          title: "Renovation & Remodeling",
+          title: "Bathroom Remodeling",
           description:
-            "Transforming outdated spaces into modern, functional, and stylish environments",
-          linkText: "See Renovations",
-          linkHref: "/services",
+            "Transform bathrooms into clean, modern, and comfortable spaces",
+          linkText: "View Details",
+          linkHref: "/services/washroom-remoduling",
         },
         {
-          title: "End-to-End Client Support",
+          title: "Electrical & Plumbing",
           description:
-            "From consultation to handover, we ensure a seamless and satisfying experience",
-          linkText: "Get Started",
-          linkHref: "/contact",
+            "Safe, neat, and professional installation and repair services",
+          linkText: "View Details",
+          linkHref: "/services/electric-and-plumbing",
         },
       ],
     },
   ];
 
   const movingTextItems = [
-    { text: "PROJECT TIMELINE GUARANTEE" },
-    { text: "SATISFACTION-FIRST APPROACH" },
-    { text: "LICENSED & INSURED EXPERTS" },
-    { text: "PROJECT TIMELINE GUARANTEE" },
-    { text: "SATISFACTION-FIRST APPROACH" },
-    { text: "LICENSED & INSURED EXPERTS" },
-    { text: "PROJECT TIMELINE GUARANTEE" },
-    { text: "SATISFACTION-FIRST APPROACH" },
-    { text: "LICENSED & INSURED EXPERTS" },
+    { text: "PREMIUM QUALITY WORK" },
+    { text: "CLEAR COMMUNICATION" },
+    { text: "TRUSTED SERVICE" },
+    { text: "WORK COMPLETED ON TIME" },
+    { text: "PREMIUM QUALITY WORK" },
+    { text: "CLEAR COMMUNICATION" },
+    { text: "TRUSTED SERVICE" },
+    { text: "WORK COMPLETED ON TIME" },
+    { text: "PREMIUM QUALITY WORK" },
   ];
 
   const socialLinks: SocialLink[] = [
@@ -164,15 +164,15 @@ const HeroBanner = () => {
               <div className="hero-content mb-15">
                 <h6 className="section-subtitle style-two fs-13 ls-1 font-optional fw-normal position-relative text_primary mb-15 flex flex-row gap-2">
                   <House className="size-4"/>
-                  BUILDING STRONG FOUNDATIONS FOR YOUR DREAM HOME
+                  SKILL GRIHA — HOME RENOVATION EXPERT
                 </h6>
                 <h1 className="font-secondary fw-normal text-title mb-0">
-                  Expert <b className="fw-black">Construction</b>
+                  <b className="fw-black">तपाईंको घर, नयाँ पहिचान</b>
                   <span className="d-md-block">
                     {" "}
-                    <b className="fw-black">Services For Residential</b> &
+                    We help you <b className="fw-black">improve, redesign,</b>
                   </span>{" "}
-                  Custom Home Projects
+                  and upgrade your home
                 </h1>
               </div>
             </div>

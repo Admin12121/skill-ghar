@@ -1,43 +1,65 @@
 import Image from "next/image";
 import Link from "next/link";
 import { Home } from "lucide-react";
+import fs from "fs";
+import path from "path";
+import matter from "gray-matter";
 
-const WhatWeOffers = () => {
-  // Dynamic data for service cards
-  const serviceData = [
-    {
-      id: 1,
-      counter: "01",
-      title: "Kitchen Renovation",
-      description: "Renovation is one of the most the heart of your home.",
-      icon: "/images/services/service-icon-1.png",
-      link: "/services/details/",
-    },
-    {
-      id: 2,
-      counter: "02",
-      title: "Full-Home Makeovers",
-      description: "Renovation is one of the most the heart of your home.",
-      icon: "/images/services/service-icon-2.png",
-      link: "/services/details/",
-    },
-    {
-      id: 3,
-      counter: "03",
-      title: "Flooring & Painting",
-      description: "Renovation is one of the most the heart of your home.",
-      icon: "/images/services/service-icon-3.png",
-      link: "/services/details/",
-    },
-    {
-      id: 4,
-      counter: "04",
-      title: "Deck Renovation",
-      description: "Renovation is one of the most the heart of your home.",
-      icon: "/images/services/service-icon-4.png",
-      link: "/services/details/",
-    },
-  ];
+interface ServiceCard {
+  id: number;
+  counter: string;
+  title: string;
+  description: string;
+  icon: string;
+  link: string;
+}
+
+function truncateDescription(text: string, maxLength: number = 80): string {
+  if (text.length <= maxLength) return text;
+  return text.substring(0, maxLength).trim() + "...";
+}
+
+async function getServicesForCards(): Promise<ServiceCard[]> {
+  const servicesDirectory = path.join(
+    process.cwd(),
+    "features/site/content/services"
+  );
+
+  const fileNames = fs.readdirSync(servicesDirectory);
+  const services: ServiceCard[] = [];
+
+  fileNames
+    .filter((fileName) => fileName.endsWith(".mdx"))
+    .forEach((fileName, index) => {
+      const fullPath = path.join(servicesDirectory, fileName);
+      const fileContents = fs.readFileSync(fullPath, "utf8");
+      const { data } = matter(fileContents);
+      const slug = fileName.replace(/\.mdx$/, "");
+
+      // Cycle through icons to ensure variety
+      const icons = [
+        "/images/services/service-icon-1.png",
+        "/images/services/service-icon-2.png",
+        "/images/services/service-icon-3.png",
+        "/images/services/service-icon-4.png",
+      ];
+      const iconIndex = index % icons.length;
+
+      services.push({
+        id: index + 1,
+        counter: String(index + 1).padStart(2, "0"),
+        title: data.title,
+        description: truncateDescription(data.excerpt, 80),
+        icon: icons[iconIndex],
+        link: `/services/${slug}`,
+      });
+    });
+
+  return services;
+}
+
+export default async function WhatWeOffers() {
+  const serviceData = await getServicesForCards();
 
   return (
     <div className="service-area style-one position-relative z-2 pt-120 pb-90 mx-xxl-4 round-40">
@@ -49,9 +71,9 @@ const WhatWeOffers = () => {
                 WHAT WE OFFER
               </h6>
               <h2 className="section-title style-one text-title px-xxl-5 mb-40">
-                Take A Brief{" "}
-                <span className="fw-black">Look At Some Of The Services</span>{" "}
-                We Offer
+                Professional{" "}
+                <span className="fw-black">Home Renovation & Improvement Services</span>{" "}
+                We Provide
               </h2>
             </div>
           </div>
@@ -101,9 +123,9 @@ const WhatWeOffers = () => {
           </div>
 
           <p className="text-center mt-xl-4">
-            Discover top-tier real estate development services{" "}
+            Discover top-tier renovation services{" "}
             <Link href="/services" className="link style-one fw-semibold">
-              View All Categories{" "}
+              View All Services{" "}
               <Image
                 src="/images/icons/right-arrow-long.svg"
                 alt="Icon"
@@ -115,6 +137,4 @@ const WhatWeOffers = () => {
         </div>
       </div>
   );
-};
-
-export default WhatWeOffers;
+}

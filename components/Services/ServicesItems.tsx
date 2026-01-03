@@ -19,98 +19,50 @@ const ServicesItems = () => {
     {
       id: 1,
       imageSrc: "/images/services/service-1.jpg",
-      title: "Custom Home Construction",
+      title: "Home Renovation & Remodeling",
       description:
-        "From foundation to finish, we build fully personalized homes match in your vision, budget",
-      linkHref: "/services/details/",
+        "We redesign and upgrade homes to improve comfort, style, and usability, whether it is one room or the whole house.",
+      linkHref: "/services/home-renovation",
     },
     {
       id: 2,
       imageSrc: "/images/services/service-2.jpg",
-      title: "Foundation & Structural Work",
+      title: "Modular Kitchen Installation",
       description:
-        "Expert excavation, concrete pouring, and structural framing to ensure long-lasting",
-      linkHref: "/services/details/",
+        "We create smart, stylish, and practical modular kitchens with quality materials and thoughtful layouts.",
+      linkHref: "/services/modular-kitchen",
     },
     {
       id: 3,
       imageSrc: "/images/services/service-3.jpg",
-      title: "Home Additions & Extensions",
+      title: "Waterproofing Solutions",
       description:
-        "Expand your living space with professionally built rooms arages or second-story",
-      linkHref: "/services/details/",
+        "We protect your home from leakage and dampness with reliable waterproofing for bathrooms, roofs, walls, and more.",
+      linkHref: "/services/water-proofing",
     },
     {
       id: 4,
       imageSrc: "/images/services/service-4.jpg",
-      title: "Roofing & Exterior Finishing",
+      title: "Roofing Installation",
       description:
-        "Durable roofing, siding, windows, and exterior details that boost curb appeal",
-      linkHref: "/services/details/",
+        "We install strong and durable roofing including toughened glass, UPVC, fibre, and polycarbonate options with neat finishing.",
+      linkHref: "/services/roofing",
     },
     {
       id: 5,
       imageSrc: "/images/services/service-5.jpg",
-      title: "Architectural Design & Planning",
+      title: "Bathroom & Washroom Remodeling",
       description:
-        "This section can be styled in a clean, modern 3-column layout with subtle hover effects",
-      linkHref: "/services/details/",
+        "We upgrade bathrooms into clean, modern, and comfortable spaces with proper fittings, layout, and waterproofing.",
+      linkHref: "/services/washroom-remoduling",
     },
     {
       id: 6,
       imageSrc: "/images/services/service-6.jpg",
-      title: "Renovation & Remodeling",
+      title: "Electrical & Plumbing Services",
       description:
-        "we provide a full spectrum services that seamlessly of real estate and construction",
-      linkHref: "/services/details/",
-    },
-    {
-      id: 7,
-      imageSrc: "/images/services/service-7.jpg",
-      title: "Property Sales & Brokerage",
-      description:
-        "The construction side, we offer end-to-end solutions including architectural design",
-      linkHref: "/services/details/",
-    },
-    {
-      id: 8,
-      imageSrc: "/images/services/service-8.jpg",
-      title: "Project Management",
-      description:
-        "Real estate with confidence, Edifico delivers trusted, timely, and high-quality service",
-      linkHref: "/services/details/",
-    },
-    {
-      id: 9,
-      imageSrc: "/images/services/service-7.jpg",
-      title: "Property Sales & Brokerage",
-      description:
-        "The construction side, we offer end-to-end solutions including architectural design",
-      linkHref: "/services/details/",
-    },
-    {
-      id: 10,
-      imageSrc: "/images/services/service-5.jpg",
-      title: "Architectural Design & Planning",
-      description:
-        "This section can be styled in a clean, modern 3-column layout with subtle hover effects",
-      linkHref: "/services/details/",
-    },
-    {
-      id: 11,
-      imageSrc: "/images/services/service-4.jpg",
-      title: "Roofing & Exterior Finishing",
-      description:
-        "Durable roofing, siding, windows, and exterior details that boost curb appeal",
-      linkHref: "/services/details/",
-    },
-    {
-      id: 12,
-      imageSrc: "/images/services/service-6.jpg",
-      title: "Renovation & Remodeling",
-      description:
-        "we provide a full spectrum services that seamlessly of real estate and construction",
-      linkHref: "/services/details/",
+        "We provide safe and reliable electrical and plumbing support for installations, repairs, and maintenance to keep your home running smoothly.",
+      linkHref: "/services/electric-and-plumbing",
     },
   ];
 

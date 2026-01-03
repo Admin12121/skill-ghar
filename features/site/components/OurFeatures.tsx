@@ -14,30 +14,30 @@ const OurFeatures = () => {
     {
       id: 1,
       iconSrc: "/images/features/feature-1.png",
-      title: "Project Management",
+      title: "Experienced Team",
       description:
-        "We handle everything from permits to final walkthrough communication every step of the way",
+        "Professional team with years of expertise in home renovation and construction work",
     },
     {
       id: 2,
       iconSrc: "/images/features/feature-2.png",
-      title: "Skilled Team",
+      title: "Premium Finishing",
       description:
-        "Experienced professionals committed to precision and safety goal is zero incidents",
+        "Attention to detail and high-quality finishing that makes your home look beautiful",
     },
     {
       id: 3,
       iconSrc: "/images/features/feature-3.png",
-      title: "Premium Materials",
+      title: "Clear Pricing",
       description:
-        "Only top-grade materials used for lasting strength and styleOur goal is zero incidents",
+        "Transparent pricing without hidden costs so you know exactly what you're paying for",
     },
     {
       id: 4,
       iconSrc: "/images/features/feature-4.png",
-      title: "Custom Home Builds",
+      title: "On Time Delivery",
       description:
-        "Tailored designs built from the ground match your vision Reliable timelines with clear",
+        "We respect your time and complete work as scheduled while maintaining quality standards",
     },
   ];
 
@@ -47,11 +47,11 @@ const OurFeatures = () => {
           <div className="col-xl-6">
             <h6 className="section-subtitle style-two fs-13 ls-1 font-optional fw-semibold position-relative text_primary mb-20 flex flex-row gap-2">
               <Home className="size-4"/>
-              OUR FEATURES
+              WHY CHOOSE US
             </h6>
             <h2 className="section-title style-one fw-normal text-title mb-40">
-              Geniune <span className="fw-black">Partner In Every Aspect</span>{" "}
-              Of Development
+              Why <span className="fw-black">People Choose Skill Griha</span>{" "}
+              For Their Homes
             </h2>
           </div>
         </div>

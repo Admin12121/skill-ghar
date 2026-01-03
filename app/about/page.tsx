@@ -3,6 +3,7 @@ import AnimationMovingText from "@/components/global/AnimationMovingText";
 import Cta from "@/components/global/Cta";
 import MeetTheTeams from "@/components/global/MeetTheTeams";
 import PageBanner from "@/components/global/PageBanner";
+import FaqContent from "@/components/Faq/FaqContent";
 import { createPageMetadata } from "@/config/metadata";
 import type { Metadata } from "next";
 
@@ -24,6 +25,8 @@ export default function Page() {
       <AnimationMovingText />
 
       <MeetTheTeams />
+
+      <FaqContent />
 
       <Cta />
     </main>

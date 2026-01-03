@@ -1,3 +1,4 @@
+import FaqContent from "@/components/Faq/FaqContent";
 import AnimationMovingText from "@/components/global/AnimationMovingText";
 import Cta from "@/components/global/Cta";
 import TestimonialsStyle2 from "@/components/global/Testimonials";
@@ -25,6 +26,7 @@ export default async function Page() {
         <AnimationMovingText />
       </div>
       <Cta />
+      <FaqContent/>
       <TestimonialsStyle2 />
     </main>
   );

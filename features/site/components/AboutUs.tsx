@@ -6,27 +6,27 @@ const AboutUs = () => {
     {
       id: 1,
       icon: "/images/about/feature-icon-1.png",
-      title: "Decades Of Construction Experience",
-      description: "Proven expertise in custom building quality craftsmanship.",
+      title: "Experienced and professional team",
+      description: "Our team has years of expertise in home renovation and construction work.",
     },
     {
       id: 2,
       icon: "/images/about/feature-icon-2.png",
-      title: "Craftsmanship Meets Modern Innovation",
-      description: "We blend tested techniques with cutting-edge building.",
+      title: "Premium finishing and attention to detail",
+      description: "We focus on quality finishing that makes your home look beautiful.",
     },
     {
       id: 3,
       icon: "/images/about/feature-icon-3.png",
-      title: "Built To Last With Quality Materials",
-      description: "We use only premium, durable & materials every project.",
+      title: "Clear pricing without hidden costs",
+      description: "Transparent pricing so you know exactly what you're paying for.",
     },
     {
       id: 4,
       icon: "/images/about/feature-icon-4.png",
-      title: "Trusted By Homeowners Across",
+      title: "Work completed on time",
       description:
-        "A growing portfolio of satisfied & successful custom builds.",
+        "We respect your time and complete work as scheduled while maintaining quality.",
     },
   ];
 
@@ -48,11 +48,11 @@ const AboutUs = () => {
 
   const content = {
     subtitle: "ABOUT US",
-    title: "Edifico Home Build Craft Was Founded On A Simple Idea Great Homes",
+    title: "We help people improve repair and redesign their homes in a simple way",
     description:
-      "We believe that every home should reflect the people who live in it. With decades of experience in custom home construction",
+      "We believe a home should be comfortable, cozy, safe, and beautiful — and our job is to help you create that kind of space. We work with homeowners who want quality work, clear communication, and a team they can trust.",
     buttonText: "More About Us",
-    buttonLink: "/about-us",
+    buttonLink: "/about",
   };
 
   return (
