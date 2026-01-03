@@ -4,9 +4,8 @@ import Link from "next/link";
 
 const Cta = () => {
   return (
-    <>
-      <div
-        className="cta-area style-one position-relative overflow-hidden z-1 mx-xxl-4 mx-2 round-40"
+    <div
+      className="cta-area style-one position-relative overflow-hidden z-1 mx-xxl-4 mx-2 round-40"
         style={{ backgroundImage: `url(/images/cta/cta-bg-1.jpg)` }}
       >
         <Image
@@ -52,7 +51,7 @@ const Cta = () => {
           </div>
         </div>
       </div>
-    </>
+
   );
 };
 

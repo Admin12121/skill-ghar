@@ -1,4 +1,3 @@
-import React from "react";
 import Image from "next/image";
 
 const AboutUsContent = () => {
@@ -31,8 +30,7 @@ const AboutUsContent = () => {
   ];
 
   return (
-    <>
-      <div className="about-area style-one pb-120">
+    <div className="about-area style-one pb-120">
         <div className="container">
           <div className="row align-items-center">
             <div className="col-xl-5 col-lg-6">
@@ -124,7 +122,6 @@ const AboutUsContent = () => {
           </div>
         </div>
       </div>
-    </>
   );
 };
 

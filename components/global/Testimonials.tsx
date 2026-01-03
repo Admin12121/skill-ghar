@@ -1,12 +1,10 @@
 "use client";
 
-import React from "react";
 import Image from "next/image";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation, Autoplay } from "swiper/modules";
 import { House } from "lucide-react";
 
-// Define TypeScript interfaces for our data structure
 interface TestimonialItem {
   id: number;
   quote: string;
@@ -50,8 +48,7 @@ const TestimonialsStyle2 = () => {
   };
 
   return (
-    <>
-      <div className="container ptb-120">
+    <div className="container ptb-120">
         <div className="row">
           <div className="col-xxl-4 col-lg-5 pe-xxl-0 mb-md-30">
             <h6 className="section-subtitle style-two fs-13 ls-1 font-optional fw-semibold position-relative text_primary mb-16 flex flex-row gap-2">
@@ -163,7 +160,6 @@ const TestimonialsStyle2 = () => {
           </div>
         </div>
       </div>
-    </>
   );
 };
 

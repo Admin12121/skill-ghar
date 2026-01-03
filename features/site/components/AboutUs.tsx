@@ -1,4 +1,3 @@
-import React from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { Home } from "lucide-react";
@@ -87,14 +86,14 @@ const AboutUs = () => {
               </h6>
               <h2 className="section-title style-one fw-normal text-title mb-30">
                 {content.title.split(" ").map((word, index, array) => (
-                  <React.Fragment key={index}>
+                  <span key={index}>
                     {index === 2 ? (
                       <span className="fw-black">{word}</span>
                     ) : (
                       word
                     )}
                     {index < array.length - 1 ? " " : ""}
-                  </React.Fragment>
+                  </span>
                 ))}
               </h2>
 

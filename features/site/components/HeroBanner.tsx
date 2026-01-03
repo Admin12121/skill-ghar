@@ -1,11 +1,12 @@
 "use client";
 
-import React, { useState } from "react";
+import { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { EffectFade, Pagination, Autoplay } from "swiper/modules";
 import { Check, House, Play } from "lucide-react";
+import siteConfig from "@/config/metadata";
 
 interface Feature {
   title: string;
@@ -17,10 +18,6 @@ interface Feature {
 interface Slide {
   backgroundImage: string;
   features: Feature[];
-}
-
-interface MovingTextItem {
-  text: string;
 }
 
 interface SocialLink {
@@ -125,7 +122,7 @@ const HeroBanner = () => {
     },
   ];
 
-  const movingTextItems: MovingTextItem[] = [
+  const movingTextItems = [
     { text: "PROJECT TIMELINE GUARANTEE" },
     { text: "SATISFACTION-FIRST APPROACH" },
     { text: "LICENSED & INSURED EXPERTS" },
@@ -141,25 +138,25 @@ const HeroBanner = () => {
     {
       name: "Facebook",
       icon: "ri-facebook-fill",
-      url: "https://www.facebook.com/profile.php?id=61572493181532",
+      url: siteConfig.social.facebook,
     },
     {
       name: "Instagram",
       icon: "ri-instagram-line",
-      url: "https://www.instagram.com/skill_griha/",
+      url: siteConfig.social.instagram,
     },
     {
-      name: "LinkedIn",
+      name: "TikTok",
       icon: "ri-tiktok-fill",
-      url: "https://www.tiktok.com/@skillgriha1",
+      url: siteConfig.social.tiktok,
     },
   ];
 
   return (
       <div className="hero-area style-two position-relative z-1 overflow-hidden">
-        <div className="br-one position-absolute top-0 z-n1"></div>
-        <div className="br-two position-absolute top-0 z-n1"></div>
-        <div className="br-three position-absolute top-0 z-n1"></div>
+        <div className="br-one position-absolute top-0 z-n1 hidden xl:block"></div>
+        <div className="br-two position-absolute top-0 z-n1 hidden xl:block"></div>
+        <div className="br-three position-absolute top-0 z-n1 hidden xl:block"></div>
 
         <div className="container-fluid">
           <div className="row pb-90 align-items-end">
@@ -180,7 +177,7 @@ const HeroBanner = () => {
               </div>
             </div>
 
-            <div className="col-lg-4 col-md-4 mb-15">
+            <div className="col-lg-4 col-md-4 mb-15 hidden xl:block">
               <div className="circle-text-wrap position-relative overflow-hidden z-1 ms-lg-auto">
                 <Image
                   src="/images/hero/circle-text-2.svg"

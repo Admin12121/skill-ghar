@@ -16,6 +16,7 @@ import Footer from "@/components/sitefooter";
 import { getServicesForMenu } from "@/lib/services";
 import { staticMenus } from "@/config/site";
 import GoTop from "@/components/global/GoTop";
+import { defaultMetadata } from "@/config/metadata";
 
 const dmSans = DM_Sans({
   variable: "--font-dm-sans",
@@ -32,12 +33,7 @@ const martianMono = Martian_Mono({
   subsets: ["latin"],
 });
 
-export const metadata: Metadata = {
-  title:
-    "Edifico - React Next.js Building Construction & Renovation Company Template",
-  description:
-    "Edifico is a modern and responsive React Next.js template designed for building, construction, and renovation companies. It offers a professional layout, fast performance, and easy customization to showcase services and projects effectively.",
-};
+export const metadata: Metadata = defaultMetadata;
 
 export default function RootLayout({
   children,

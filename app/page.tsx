@@ -6,8 +6,11 @@ import HeroBanner from "@/features/site/components/HeroBanner";
 import OurFeatures from "@/features/site/components/OurFeatures";
 import OurProjects from "@/features/site/components/OurProjects";
 import WhatWeOffers from "@/features/site/components/WhatWeOffers";
+import { getProjectsList } from "@/lib/projects";
 
-export default function Page() {
+export default async function Page() {
+  const projects = getProjectsList();
+
   return (
     <main>
       <HeroBanner />
@@ -17,7 +20,7 @@ export default function Page() {
       </div>
       <WhatWeOffers />
       <AboutUsContent />
-      <OurProjects />
+      <OurProjects projects={projects} />
       <div className="py-20">
         <AnimationMovingText />
       </div>

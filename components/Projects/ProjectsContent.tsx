@@ -1,120 +1,19 @@
 "use client";
 
-import React, { useState, useEffect, useRef } from "react";
+import { useState, useEffect, useRef } from "react";
 import Image from "next/image";
 import Link from "next/link";
+import type { ProjectListItem } from "@/lib/projects";
 
-// Define proper TypeScript interfaces for type safety
-interface Project {
-  id: number;
-  title: string;
-  status: string;
-  type: string;
-  location: string;
-  budget: string;
-  image: string;
-  link: string;
+interface ProjectsContentProps {
+  projects: ProjectListItem[];
 }
 
-// Move allProjects outside the component since it's static data
-const allProjects: Project[] = [
-  {
-    id: 1,
-    title: "Greenview Apartments",
-    status: "Under Construction",
-    type: "Residential",
-    location: "Florida",
-    budget: "$10 - $15K",
-    image: "/images/project/project-bg-1.jpg",
-    link: "/projects/details/",
-  },
-  {
-    id: 2,
-    title: "Premier Office Tower",
-    status: "Completed",
-    type: "Commercial",
-    location: "California",
-    budget: "$15 - $25K",
-    image: "/images/project/project-bg-2.jpg",
-    link: "/projects/details/",
-  },
-  {
-    id: 3,
-    title: "Urban Height Residence",
-    status: "Under Construction",
-    type: "Residential",
-    location: "New York",
-    budget: "$20 - $35K",
-    image: "/images/project/project-bg-3.jpg",
-    link: "/projects/details/",
-  },
-  {
-    id: 4,
-    title: "Sunset Plaza",
-    status: "Completed",
-    type: "Commercial",
-    location: "Florida",
-    budget: "$10 - $15K",
-    image: "/images/project/project-bg-4.jpg",
-    link: "/projects/details/",
-  },
-  {
-    id: 5,
-    title: "Riverside Condos",
-    status: "Under Construction",
-    type: "Residential",
-    location: "California",
-    budget: "$15 - $25K",
-    image: "/images/project/project-bg-5.jpg",
-    link: "/projects/details/",
-  },
-  {
-    id: 6,
-    title: "Metropolis Mall",
-    status: "Completed",
-    type: "Public",
-    location: "New York",
-    budget: "$20 - $35K",
-    image: "/images/project/project-bg-6.jpg",
-    link: "/projects/details/",
-  },
-  {
-    id: 7,
-    title: "Harborview Villas",
-    status: "Under Construction",
-    type: "Residential",
-    location: "Texas",
-    budget: "$12 - $20K",
-    image: "/images/project/project-bg-7.jpg",
-    link: "/projects/details/",
-  },
-  {
-    id: 8,
-    title: "Downtown Tech Park",
-    status: "Completed",
-    type: "Commercial",
-    location: "California",
-    budget: "$25 - $40K",
-    image: "/images/project/project-bg-8.jpg",
-    link: "/projects/details/",
-  },
-  {
-    id: 9,
-    title: "Lakeside Community Center",
-    status: "Completed",
-    type: "Public",
-    location: "Florida",
-    budget: "$18 - $28K",
-    image: "/images/project/project-bg-3.jpg",
-    link: "/projects/details/",
-  },
-];
-
-const ProjectsContent = () => {
+const ProjectsContent = ({ projects }: ProjectsContentProps) => {
   // State management with proper typing
   const [currentPage, setCurrentPage] = useState<number>(1);
   const projectsPerPage = 6;
-  const totalPages = Math.ceil(allProjects.length / projectsPerPage);
+  const totalPages = Math.ceil(projects.length / projectsPerPage);
 
   // Ref for the container element
   const containerRef = useRef<HTMLDivElement>(null);
@@ -139,7 +38,7 @@ const ProjectsContent = () => {
   // Get current projects for display
   const indexOfLastProject = currentPage * projectsPerPage;
   const indexOfFirstProject = indexOfLastProject - projectsPerPage;
-  const currentProjects = allProjects.slice(
+  const currentProjects = projects.slice(
     indexOfFirstProject,
     indexOfLastProject
   );
@@ -150,11 +49,11 @@ const ProjectsContent = () => {
         <div className="row justify-content-center">
           {currentProjects.length > 0 ? (
             currentProjects.map((project, index) => (
-              <div className="col-xl-4 col-md-6" key={project.id}>
+              <div className="col-xl-4 col-md-6" key={project.slug}>
                 <div
                   className="project-card style-four position-relative overflow-hidden z-1 round-10 mb-45"
                   style={{
-                    backgroundImage: `url(${project.image})`,
+                    backgroundImage: `url(${project.backgroundImage})`,
                   }}
                 >
                   <span className="project-status transition">
@@ -166,7 +65,7 @@ const ProjectsContent = () => {
                   <div className="project-title d-flex flex-wrap align-items-center justify-content-between">
                     <h3 className="fs-24 fw-semibold mb-0">
                       <Link
-                        href={project.link}
+                        href={`/projects/${project.slug}`}
                         className="text-title hover-text-primary transition"
                       >
                         {project.title}
@@ -183,7 +82,7 @@ const ProjectsContent = () => {
           )}
         </div>
         {/* Pagination */}
-        {allProjects.length > projectsPerPage && (
+        {projects.length > projectsPerPage && (
           <ul className="page-nav pagination justify-content-center mb-0 mt-lg-4">
             <li className="page-item">
               <button

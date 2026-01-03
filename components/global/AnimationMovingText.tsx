@@ -15,8 +15,7 @@ const AnimationMovingText = () => {
   const duplicatedItems = [...textItems, ...textItems];
 
   return (
-    <>
-      <div className="move-text-wrapper overflow-hidden">
+    <div className="move-text-wrapper overflow-hidden">
         <div className="move-text style-two position-relative z-1">
           <ul className="list-unstyled mb-0">
             {duplicatedItems.map((item, index) => (
@@ -27,7 +26,6 @@ const AnimationMovingText = () => {
           </ul>
         </div>
       </div>
-    </>
   );
 };
 

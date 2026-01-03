@@ -1,6 +1,7 @@
 import PageBanner from "@/components/global/PageBanner";
 import ServiceDetailsContent from "@/components/Services/ServiceDetailsContent";
 import { getServiceBySlug, getAllServiceSlugs, getServicesList } from "@/lib/services";
+import { createServiceMetadata } from "@/config/metadata";
 import { notFound } from "next/navigation";
 
 export async function generateStaticParams() {
@@ -34,10 +35,11 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   try {
     const service = await getServiceBySlug(slug);
     
-    return {
-      title: service.title,
-      description: service.excerpt,
-    };
+    return createServiceMetadata(
+      service.title,
+      service.excerpt || service.title,
+      slug
+    );
   } catch (error) {
     return {
       title: "Service Not Found",

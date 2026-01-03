@@ -1,4 +1,3 @@
-import React from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { Home } from "lucide-react";
@@ -41,8 +40,7 @@ const WhatWeOffers = () => {
   ];
 
   return (
-    <>
-      <div className="service-area style-one position-relative z-2 pt-120 pb-90 mx-xxl-4 round-40">
+    <div className="service-area style-one position-relative z-2 pt-120 pb-90 mx-xxl-4 round-40">
         <div className="container">
           <div className="row">
             <div className="col-xl-8 offset-xl-2 col-md-10 offset-md-1 text-center px-xxl-5">
@@ -116,7 +114,6 @@ const WhatWeOffers = () => {
           </p>
         </div>
       </div>
-    </>
   );
 };
 

@@ -5,62 +5,27 @@ import Link from "next/link";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay } from "swiper/modules";
 import { House } from "lucide-react";
+import type { ProjectListItem } from "@/lib/projects";
 
-interface ProjectItem {
-  id: number;
-  backgroundImage: string;
-  status: string;
-  title: string;
-  linkHref: string;
+interface OurProjectsProps {
+  projects: ProjectListItem[];
 }
 
-const OurProjects = () => {
-  const projects: ProjectItem[] = [
-    {
-      id: 1,
-      backgroundImage: "/images/project/project-bg-1.jpg",
-      status: "Under Construction",
-      title: "Greenview Apartments",
-      linkHref: "/projects/details",
-    },
-    {
-      id: 2,
-      backgroundImage: "/images/project/project-bg-2.jpg",
-      status: "Completed",
-      title: "Premier Office Tower",
-      linkHref: "/projects/details",
-    },
-    {
-      id: 3,
-      backgroundImage: "/images/project/project-bg-3.jpg",
-      status: "Under Construction",
-      title: "Urban Height Residence",
-      linkHref: "/projects/details",
-    },
-    {
-      id: 4,
-      backgroundImage: "/images/project/project-bg-4.jpg",
-      status: "Completed",
-      title: "Hitech Eco Tower",
-      linkHref: "/projects/details",
-    },
-  ];
+const OurProjects = ({ projects }: OurProjectsProps) => {
 
   return (
-    <>
-      <div className="container">
-        <div className="row justify-content-center">
-          <div className="col-xl-6 text-center">
-            <h6 className="section-subtitle style-two text-center fs-13 ls-1 font-optional fw-semibold position-relative text_primary mb-16 flex flex-row gap-2 justify-center items-center">
-                  <House className="size-4"/>
-              OUR PROJECTS
-            </h6>
-            <h2 className="section-title style-one fw-normal text-title mb-35">
-              Basement To{" "}
-              <span className="fw-black">Beautiful – Finished Basement</span>{" "}
-              Project
-            </h2>
-          </div>
+    <div className="ptb-120 max-w-dvw! px-4">
+      <div className="row justify-content-center">
+        <div className="col-xl-6 text-center">
+          <h6 className="section-subtitle style-two text-center fs-13 ls-1 font-optional fw-semibold position-relative text_primary mb-16 flex flex-row gap-2 justify-center items-center">
+            <House className="size-4"/>
+            OUR PROJECTS
+          </h6>
+          <h2 className="section-title style-one fw-normal text-title mb-35">
+            Basement To{" "}
+            <span className="fw-black">Beautiful – Finished Basement</span>{" "}
+            Project
+          </h2>
         </div>
       </div>
 
@@ -99,7 +64,7 @@ const OurProjects = () => {
         className="project-slider-two"
       >
         {projects.map((project, index) => (
-          <SwiperSlide key={project.id}>
+          <SwiperSlide key={project.slug}>
             <div
               className="project-card style-two position-relative overflow-hidden z-1 round-10"
               style={{
@@ -117,14 +82,14 @@ const OurProjects = () => {
               <div className="project-title d-flex flex-wrap align-items-center justify-content-between">
                 <h3 className="fs-24 fw-semibold mb-0">
                   <Link
-                    href={project.linkHref}
+                    href={`/projects/${project.slug}`}
                     className="text-title hover-text-primary transition"
                   >
                     {project.title}
                   </Link>
                 </h3>
                 <Link
-                  href={project.linkHref}
+                  href={`/projects/${project.slug}`}
                   className="project-link d-flex flex-column align-items-center justify-content-center rounded-circle transition"
                 >
                   <Image
@@ -140,7 +105,7 @@ const OurProjects = () => {
           </SwiperSlide>
         ))}
       </Swiper>
-    </>
+    </div>
   );
 };
 

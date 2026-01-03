@@ -1,20 +1,21 @@
 import Link from "next/link";
 import { FlickeringGrid } from "./flickering-grid";
 import Image from "next/image";
+import siteConfig from "@/config/metadata";
 
 const footerData = {
   socialLinks: [
     {
       icon: "ri-facebook-fill text-black!",
-      url: "https://www.facebook.com/profile.php?id=61572493181532",
+      url: siteConfig.social.facebook,
     },
     {
       icon: "ri-instagram-line text-black!",
-      url: "https://www.instagram.com/skill_griha/",
+      url: siteConfig.social.instagram,
     },
     {
       icon: "ri-tiktok-fill text-black!",
-      url: "https://www.tiktok.com/@skillgriha1",
+      url: siteConfig.social.tiktok,
     },
   ],
 };

@@ -2,7 +2,7 @@
 
 import React, { useEffect, useState, useCallback } from "react";
 
-const WHATSAPP_NUMBER = "977981276838";
+const WHATSAPP_NUMBER = "9812768387";
 const SCROLL_THRESHOLD = 150;
 
 const GoTop = () => {

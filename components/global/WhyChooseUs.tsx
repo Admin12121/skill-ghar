@@ -1,4 +1,3 @@
-import React from "react";
 import Image from "next/image";
 
 const WhyChooseUs = () => {
@@ -46,8 +45,7 @@ const WhyChooseUs = () => {
   };
 
   return (
-    <>
-      <div className="wh-area style-two bg-gray ptb-120 round-45 mx-xxl-5 mx-2">
+    <div className="wh-area style-two bg-gray ptb-120 round-45 mx-xxl-5 mx-2">
         <div className="container">
           <div className="row align-items-center">
             <div className="col-xxl-6 col-xl-6 col-lg-7 pe-xxl-0">
@@ -142,7 +140,6 @@ const WhyChooseUs = () => {
           </div>
         </div>
       </div>
-    </>
   );
 };
 

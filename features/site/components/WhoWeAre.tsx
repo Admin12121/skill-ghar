@@ -1,4 +1,3 @@
-import React from "react";
 import Image from "next/image";
 import Link from "next/link";
 
@@ -63,8 +62,7 @@ const WhoWeAre = () => {
   };
 
   return (
-    <>
-      <div className="about-area style-two overflow-hidden bg-optional round-30">
+    <div className="about-area style-two overflow-hidden bg-optional round-30">
         <div className="container-fluid style-one">
           <div className="row">
             <div className="ps-0 col-xxl-7 col-lg-6 pe-xxl-5">
@@ -154,7 +152,7 @@ const WhoWeAre = () => {
           </div>
         </div>
       </div>
-    </>
+    </div>
   );
 };
 

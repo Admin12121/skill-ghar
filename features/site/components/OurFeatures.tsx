@@ -1,7 +1,6 @@
 import { Home } from "lucide-react";
 import Image from "next/image";
 
-
 interface FeatureItem {
   id: number;
   iconSrc: string;
@@ -43,8 +42,7 @@ const OurFeatures = () => {
   ];
 
   return (
-    <>
-      <div className="container pt-120 pb-90">
+    <div className="container pt-120 pb-90">
         <div className="row">
           <div className="col-xl-6">
             <h6 className="section-subtitle style-two fs-13 ls-1 font-optional fw-semibold position-relative text_primary mb-20 flex flex-row gap-2">
@@ -80,7 +78,6 @@ const OurFeatures = () => {
           ))}
         </div>
       </div>
-    </>
   );
 };
 
