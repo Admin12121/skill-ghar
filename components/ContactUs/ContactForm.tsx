@@ -244,7 +244,7 @@ const ContactForm = ({ services }: ContactFormProps) => {
           <div className="col-lg-6 ps-xxl-5">
             <div className="comp-map round-20">
               <iframe
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2843.633897069592!2d-72.06176842322485!3d44.54312817107391!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4cb434034d654acf%3A0xd3f30445e8230f9a!2s401%20Town%20Hwy%2024%2C%20Lyndonville%2C%20VT%2005851%2C%20USA!5e0!3m2!1sen!2sbd!4v1757832399321!5m2!1sen!2sbd"
+                src="https://www.openstreetmap.org/export/embed.html?bbox=85.3390,27.7170,85.3510,27.7230&layer=mapnik&marker=27.720021,85.345014"
                 title="Map"
                 width="100%"
                 height="550"

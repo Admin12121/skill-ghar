@@ -1,30 +1,29 @@
 import Image from "next/image";
 
 const AboutUsContent = () => {
-  // Dynamic data for counter cards
   const counterData = [
     {
       id: 1,
       title: "EXPERIENCE",
-      value: "10",
+      value: "3",
       suffix: "+",
       description: "Years in Business",
       bgClass: "bg-1",
     },
     {
       id: 2,
-      title: "EXPERTISE",
-      value: "50",
+      title: "INSPECTED",
+      value: "15k",
       suffix: "+",
-      description: "Skilled Professionals",
+      description: "Houses Inspected",
       bgClass: "bg-2",
     },
     {
       id: 3,
-      title: "SUCCESS",
+      title: "RENOVATED",
       value: "500",
       suffix: "+",
-      description: "Happy Customers",
+      description: "Houses Renovated",
       bgClass: "bg-3",
     },
   ];
@@ -36,7 +35,7 @@ const AboutUsContent = () => {
             <div className="col-xl-5 col-lg-6">
               <div className="about-img-wrap position-relative pe-xxl-4 mb-md-30">
                 <Image
-                  src="/images/about/about-img-1.jpg"
+                  src="/images/about/about-img.jpg"
                   alt="about"
                   width={890}
                   height={1036}

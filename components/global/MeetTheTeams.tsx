@@ -9,9 +9,9 @@ import { Navigation, Autoplay } from "swiper/modules";
 const teamMembersData = [
   {
     id: 1,
-    name: "Michael Harper",
+    name: "Jit Gajmer",
     position: "Project Manager",
-    imageUrl: "/images/team/team-1.jpg",
+    imageUrl: "/images/team/jit-gajmer.webp",
     profileUrl: "/team/details",
     socialLinks: [
       {
@@ -28,9 +28,9 @@ const teamMembersData = [
   },
   {
     id: 2,
-    name: "Samantha Cruz",
-    position: "Interior Designer",
-    imageUrl: "/images/team/team-2.jpg",
+    name: "Ramesh Khadka",
+    position: "Department Chief Inspection",
+    imageUrl: "/images/team/ramesh-khadka.webp",
     profileUrl: "/team/details",
     socialLinks: [
       {
@@ -47,84 +47,9 @@ const teamMembersData = [
   },
   {
     id: 3,
-    name: "David Johnson",
-    position: "Senior Architect",
-    imageUrl: "/images/team/team-3.jpg",
-    profileUrl: "/team/details",
-    socialLinks: [
-      {
-        platform: "facebook",
-        url: "https://www.facebook.com",
-        icon: "ri-facebook-fill",
-      },
-      { platform: "twitter", url: "https://x.com/", icon: "ri-twitter-x-line" },
-    ],
-  },
-  {
-    id: 4,
-    name: "Emily Carter",
-    position: "Civil Engineer",
-    imageUrl: "/images/team/team-4.jpg",
-    profileUrl: "/team/details",
-    socialLinks: [
-      {
-        platform: "facebook",
-        url: "https://www.facebook.com",
-        icon: "ri-facebook-fill",
-      },
-      { platform: "twitter", url: "https://x.com/", icon: "ri-twitter-x-line" },
-    ],
-  },
-  {
-    id: 5,
-    name: "Robert Wilson",
-    position: "Construction Supervisor",
-    imageUrl: "/images/team/team-5.jpg",
-    profileUrl: "/team/details",
-    socialLinks: [
-      {
-        platform: "facebook",
-        url: "https://www.facebook.com",
-        icon: "ri-facebook-fill",
-      },
-      { platform: "twitter", url: "https://x.com/", icon: "ri-twitter-x-line" },
-    ],
-  },
-  {
-    id: 6,
-    name: "Olivia Martinez",
-    position: "3D Visualizer",
-    imageUrl: "/images/team/team-6.jpg",
-    profileUrl: "/team/details",
-    socialLinks: [
-      {
-        platform: "facebook",
-        url: "https://www.facebook.com",
-        icon: "ri-facebook-fill",
-      },
-      { platform: "twitter", url: "https://x.com/", icon: "ri-twitter-x-line" },
-    ],
-  },
-  {
-    id: 7,
-    name: "James Anderson",
-    position: "Site Coordinator",
-    imageUrl: "/images/team/team-7.jpg",
-    profileUrl: "/team/details",
-    socialLinks: [
-      {
-        platform: "facebook",
-        url: "https://www.facebook.com",
-        icon: "ri-facebook-fill",
-      },
-      { platform: "twitter", url: "https://x.com/", icon: "ri-twitter-x-line" },
-    ],
-  },
-  {
-    id: 8,
-    name: "Sophia Lee",
-    position: "Structural Engineer",
-    imageUrl: "/images/team/team-8.jpg",
+    name: "Surendra BK",
+    position: "Sale and Department",
+    imageUrl: "/images/team/surendra.webp",
     profileUrl: "/team/details",
     socialLinks: [
       {
@@ -188,21 +113,14 @@ const MeetTheTeams = () => {
           >
             {teamMembersData.map((member) => (
               <SwiperSlide key={member.id}>
-                <div className="team-card style-one img-hover-zoom">
-                  <div className="team-img round-10 img-zoom position-relative overflow-hidden">
+                <div className="team-card style-one">
+                  <div className="team-img round-10 position-relative overflow-hidden">
                     <Image
                       src={member.imageUrl}
                       alt={`${member.name} - ${member.position}`}
                       width={570}
                       height={675}
-                      className="position-absolute top-0 bottom-0 start-0 end-0 z-1 round-10 transition"
-                    />
-                    <Image
-                      src={member.imageUrl}
-                      alt={`${member.name} - ${member.position}`}
-                      width={570}
-                      height={675}
-                      className="round-10 transition"
+                      className="round-10"
                     />
                   </div>
                   <div className="team-info d-flex flex-wrap justify-content-between">

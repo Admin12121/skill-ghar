@@ -43,7 +43,7 @@ const HeroBanner = () => {
 
   const slides: Slide[] = [
     {
-      backgroundImage: "/images/hero/hero-slide-1.jpg",
+      backgroundImage: "/images/hero/hero-slide-1.webp",
       features: [
         {
           title: "Experienced Team",
@@ -69,7 +69,7 @@ const HeroBanner = () => {
       ],
     },
     {
-      backgroundImage: "/images/hero/hero-slide-2.jpg",
+      backgroundImage: "/images/hero/hero-slide-2.webp",
       features: [
         {
           title: "Home Renovation",
@@ -95,7 +95,7 @@ const HeroBanner = () => {
       ],
     },
     {
-      backgroundImage: "/images/hero/hero-slide-3.jpg",
+      backgroundImage: "/images/hero/hero-slide-3.webp",
       features: [
         {
           title: "Roofing",
