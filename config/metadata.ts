@@ -2,13 +2,13 @@ import type { Metadata } from "next";
 
 const siteConfig = {
   name: "Skill Griha",
-  title: "Skill Griha - Building Construction & Renovation Company",
+  title: "Skill Griha - पुरानो घर नया स्वरुप",
   description:
     "Professional building construction and renovation services. We specialize in home renovation, modular kitchens, waterproofing, roofing, washroom remodeling, and electrical & plumbing services.",
   url: "https://skillgriha.com",
   ogImage: "/images/og.webp",
   social: {
-    facebook: "https://www.facebook.com/profile.php?id=61572493181532",
+    facebook: "https://www.facebook.com/profile.php?id=61586108699236",
     instagram: "https://www.instagram.com/skill_griha/",
     tiktok: "https://www.tiktok.com/@skillgriha1",
   },

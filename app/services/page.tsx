@@ -11,10 +11,10 @@ export const metadata: Metadata = createPageMetadata(
 
 export default function Page() {
   return (
-    <>
+    <main>
       <PageBanner pageTitle="Services" />
 
       <ServicesItems />
-    </>
+    </main>
   );
 }
