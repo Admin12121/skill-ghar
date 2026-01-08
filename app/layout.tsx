@@ -9,6 +9,8 @@ import "../styles/footer.css";
 import "../styles/style.css";
 import "../styles/responsive.css";
 
+import "maplibre-gl/dist/maplibre-gl.css";
+
 import type { Metadata } from "next";
 import { DM_Sans, Exo, Martian_Mono } from "next/font/google";
 import SiteHeader from "@/components/siteheader";

@@ -2,6 +2,11 @@
 
 import React, { useState, FormEvent } from "react";
 import confetti from "canvas-confetti";
+import dynamic from "next/dynamic";
+
+const OSMMap = dynamic(() => import("@/features/site/components/osmap"), {
+  ssr: false,
+});
 
 interface Service {
   slug: string;
@@ -63,8 +68,9 @@ const ContactForm = ({ services }: ContactFormProps) => {
     setStatus({ type: "", message: "" });
 
     try {
-      const subjectLine = formData.service === "other" ? formData.subject : formData.service;
-      
+      const subjectLine =
+        formData.service === "other" ? formData.subject : formData.service;
+
       const response = await fetch("/api/mailme", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
@@ -129,7 +135,9 @@ const ContactForm = ({ services }: ContactFormProps) => {
                       type="text"
                       required
                       value={formData.name}
-                      onChange={(e) => setFormData({ ...formData, name: e.target.value })}
+                      onChange={(e) =>
+                        setFormData({ ...formData, name: e.target.value })
+                      }
                       className="w-100 ht-50 bg-gray border-0 outline-0 round-5 text-para"
                       placeholder="Name"
                       disabled={loading}
@@ -144,7 +152,9 @@ const ContactForm = ({ services }: ContactFormProps) => {
                       placeholder="Email"
                       required
                       value={formData.email}
-                      onChange={(e) => setFormData({ ...formData, email: e.target.value })}
+                      onChange={(e) =>
+                        setFormData({ ...formData, email: e.target.value })
+                      }
                       className="w-100 ht-50 bg-gray border-0 outline-0 round-5 text-para"
                       disabled={loading}
                     />
@@ -156,7 +166,13 @@ const ContactForm = ({ services }: ContactFormProps) => {
                     <select
                       required
                       value={formData.service}
-                      onChange={(e) => setFormData({ ...formData, service: e.target.value, subject: "" })}
+                      onChange={(e) =>
+                        setFormData({
+                          ...formData,
+                          service: e.target.value,
+                          subject: "",
+                        })
+                      }
                       className="w-100 ht-50 bg-gray border-0 outline-0 round-5 text-para"
                       disabled={loading}
                     >
@@ -179,7 +195,9 @@ const ContactForm = ({ services }: ContactFormProps) => {
                         placeholder="Subject"
                         required
                         value={formData.subject}
-                        onChange={(e) => setFormData({ ...formData, subject: e.target.value })}
+                        onChange={(e) =>
+                          setFormData({ ...formData, subject: e.target.value })
+                        }
                         className="w-100 ht-50 bg-gray border-0 outline-0 round-5 text-para"
                         disabled={loading}
                       />
@@ -196,7 +214,9 @@ const ContactForm = ({ services }: ContactFormProps) => {
                       placeholder="Message"
                       required
                       value={formData.message}
-                      onChange={(e) => setFormData({ ...formData, message: e.target.value })}
+                      onChange={(e) =>
+                        setFormData({ ...formData, message: e.target.value })
+                      }
                       className="w-100 ht-152 bg-gray border-0 outline-0 round-5 text-para resize-0"
                       disabled={loading}
                     ></textarea>
@@ -224,12 +244,18 @@ const ContactForm = ({ services }: ContactFormProps) => {
                   <div className="col-12 mt-3">
                     <div
                       className={`alert ${
-                        status.type === "success" ? "alert-success" : "alert-danger"
+                        status.type === "success"
+                          ? "alert-success"
+                          : "alert-danger"
                       } p-3 round-5`}
                       style={{
-                        backgroundColor: status.type === "success" ? "#d4edda" : "#f8d7da",
-                        color: status.type === "success" ? "#155724" : "#721c24",
-                        border: `1px solid ${status.type === "success" ? "#c3e6cb" : "#f5c6cb"}`,
+                        backgroundColor:
+                          status.type === "success" ? "#d4edda" : "#f8d7da",
+                        color:
+                          status.type === "success" ? "#155724" : "#721c24",
+                        border: `1px solid ${
+                          status.type === "success" ? "#c3e6cb" : "#f5c6cb"
+                        }`,
                         borderRadius: "5px",
                       }}
                     >
@@ -243,16 +269,7 @@ const ContactForm = ({ services }: ContactFormProps) => {
 
           <div className="col-lg-6 ps-xxl-5">
             <div className="comp-map round-20">
-              <iframe
-                src="https://www.openstreetmap.org/export/embed.html?bbox=85.3390,27.7170,85.3510,27.7230&layer=mapnik&marker=27.720021,85.345014"
-                title="Map"
-                width="100%"
-                height="550"
-                style={{ border: 0, borderRadius: "10px" }}
-                allowFullScreen
-                loading="lazy"
-                referrerPolicy="no-referrer-when-downgrade"
-              ></iframe>
+              <OSMMap />
             </div>
           </div>
         </div>

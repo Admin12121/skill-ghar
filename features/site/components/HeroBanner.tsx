@@ -167,7 +167,7 @@ const HeroBanner = () => {
                   SKILL GRIHA — HOME RENOVATION EXPERT
                 </h6>
                 <h1 className="font-secondary fw-normal text-title mb-0">
-                  <b className="fw-black">तपाईंको घर, नयाँ पहिचान</b>
+                  <b className="fw-black">पुरानो घर नयाँ स्वरूप</b>
                   <span className="d-md-block">
                     {" "}
                     We help you <b className="fw-black">improve, redesign,</b>
