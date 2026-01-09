@@ -43,10 +43,6 @@ const HeroBanner = () => {
     setShowModal(false);
   };
 
-  const handleBackdropClick = (e: React.MouseEvent) => {
-    if (e.target === e.currentTarget) closeModal();
-  };
-
   const togglePlay = () => {
     const v = videoRef.current;
     if (!v) return;
@@ -326,7 +322,6 @@ const HeroBanner = () => {
           role="dialog"
           aria-modal="true"
         >
-          {/* Backdrop (click to close) */}
           <button
             type="button"
             aria-label="Close modal"
@@ -334,7 +329,6 @@ const HeroBanner = () => {
             onClick={closeModal}
           />
 
-          {/* Modal content (prevent closing when clicking inside) */}
           <div
             className="relative z-10 w-full max-w-5xl"
             onClick={(e) => e.stopPropagation()}

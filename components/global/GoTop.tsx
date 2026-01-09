@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useEffect, useState, useCallback } from "react";
+import { useEffect, useState, useCallback } from "react";
 
 const WHATSAPP_NUMBER = "9812768387";
 const SCROLL_THRESHOLD = 150;

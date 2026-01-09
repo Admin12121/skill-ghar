@@ -30,7 +30,6 @@ const AboutUs = () => {
     },
   ];
 
-  // Dynamic data for images
   const images = {
     main: {
       src: "/images/about/about-img-3.png",

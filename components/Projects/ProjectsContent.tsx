@@ -44,29 +44,30 @@ const ProjectsContent = ({ projects }: ProjectsContentProps) => {
   );
 
   return (
-    <>
+    <main>
       <div ref={containerRef} className="container ptb-120">
         <div className="row justify-content-center">
           {currentProjects.length > 0 ? (
             currentProjects.map((project, index) => (
               <div className="col-xl-4 col-md-6" key={project.slug}>
                 <div
-                  className="project-card style-four position-relative overflow-hidden z-1 round-10 mb-45"
+                  className="project-card style-four position-relative overflow-hidden z-1 round-10 mb-45 bg-transparent text-white"
                   style={{
                     backgroundImage: `url(${project.backgroundImage})`,
+                    backgroundSize: "cover",
                   }}
                 >
                   <span className="project-status transition">
                     {project.status}
                   </span>
-                  <span className="project-counter text-center font-secondary fw-semibold d-block lh-1 transition">
+                  <span className="my-14.75 text-center font-secondary fw-semibold d-block lh-1 transition text-white text-[250px]!">
                     {String(indexOfFirstProject + index + 1).padStart(2, "0")}
                   </span>
                   <div className="project-title d-flex flex-wrap align-items-center justify-content-between">
-                    <h3 className="fs-24 fw-semibold mb-0">
+                    <h3 className="fs-24 fw-semibold mb-0 ">
                       <Link
                         href={`/projects/${project.slug}`}
-                        className="text-title hover-text-primary transition"
+                        className="text-title hover-text-primary transition text-white"
                       >
                         {project.title}
                       </Link>
@@ -130,7 +131,7 @@ const ProjectsContent = ({ projects }: ProjectsContentProps) => {
           </ul>
         )}
       </div>
-    </>
+    </main>
   );
 };
 

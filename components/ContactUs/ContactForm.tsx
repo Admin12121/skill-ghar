@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState, FormEvent } from "react";
+import { useState, FormEvent } from "react";
 import confetti from "canvas-confetti";
 import dynamic from "next/dynamic";
 

@@ -1,7 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
 
-// Define TypeScript interfaces for our data structure
 interface FeatureItem {
   text: string;
 }
@@ -24,7 +23,6 @@ interface WhoWeAreData {
 }
 
 const WhoWeAre = () => {
-  // Dynamic data for the WhoWeAre section
   const whoWeAreData: WhoWeAreData = {
     backgroundImage: "/images/about/about-bg-1.jpg",
     subtitle: "WHO WE ARE",

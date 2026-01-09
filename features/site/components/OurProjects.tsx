@@ -83,7 +83,7 @@ const OurProjects = ({ projects }: OurProjectsProps) => {
                 <h3 className="fs-24 fw-semibold mb-0">
                   <Link
                     href={`/projects/${project.slug}`}
-                    className="text-title hover-text-primary transition"
+                    className="text-title hover-text-primary transition text-white!"
                   >
                     {project.title}
                   </Link>

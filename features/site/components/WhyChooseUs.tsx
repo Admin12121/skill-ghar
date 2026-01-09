@@ -1,10 +1,8 @@
-import React from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { House } from "lucide-react";
 
 const WhyChooseUs = () => {
-  // Dynamic data for features
   const features = [
     {
       id: 1,
@@ -28,7 +26,6 @@ const WhyChooseUs = () => {
     },
   ];
 
-  // Dynamic data for CEO message
   const ceoMessage = {
     image: "/images/about/ceo.jpg",
     quote:
@@ -37,7 +34,6 @@ const WhyChooseUs = () => {
     title: "Denver, CEO",
   };
 
-  // Dynamic data for images
   const images = {
     main: {
       src: "/images/about/wh-img-1.jpg",

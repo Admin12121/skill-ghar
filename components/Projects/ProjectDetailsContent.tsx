@@ -69,7 +69,7 @@ const ProjectDetailsContent = ({ data, projectsList }: ProjectDetailsContentProp
                       alt={data.title}
                       width={1140}
                       height={555}
-                      className="round-10"
+                      className="round-10 aspect-video object-cover"
                     />
                   </div>
                   <div className="single-para">

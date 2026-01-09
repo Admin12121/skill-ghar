@@ -1,8 +1,6 @@
-import React from "react";
 import Image from "next/image";
 
 const ContactInfo = () => {
-  // Dynamic contact data
   const contactData = [
     {
       id: 1,
@@ -18,9 +16,9 @@ const ContactInfo = () => {
       iconSrc: "/images/icons/mail-black.svg",
       iconAlt: "Mail Icon",
       title: "EMAIL",
-      contact: "skillgriha@gmail.com",
+      contact: "info@skillgriha.com",
       linkType: "mailto",
-      linkValue: "skillgriha@gmail.com",
+      linkValue: "info@skillgriha.com",
     },
     {
       id: 3,

@@ -97,7 +97,6 @@ const MobileMenuItems = ({
                     />
                   </svg>
                 </div>
-                {/* Always render dropdown but control visibility with CSS */}
                 <ul className={`dropdown-menu ${isOpen ? "show" : ""}`}>
                   <MobileMenuItems
                     items={item.children!}

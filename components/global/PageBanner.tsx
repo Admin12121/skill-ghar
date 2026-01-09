@@ -1,4 +1,3 @@
-import React from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { House } from "lucide-react";
@@ -9,15 +8,23 @@ interface Props {
 
 const PageBanner = ({ pageTitle }: Props) => {
   return (
-    <>
-      <div className="breadcrumb-area position-relative z-1">
+    <main>
+      <div className="breadcrumb-area position-relative z-1 overflow-hidden">
         <Image
+          src="/images/breadcrumb/baner.jpg"
+          alt="Background"
+          width={1880}
+          height={390}
+          className="position-absolute top-0 start-0 w-100 h-100 z-n1 object-cover"
+          style={{ opacity: 0.15 }}
+        />
+        {/* <Image
           src="/images/breadcrumb/br-line-shape.png"
           alt="Shape"
           width={1880}
           height={390}
           className="br-line-shape position-absolute top-0 start-0 w-100 h-100 z-n1"
-        />
+        /> */}
         <Image
           src="/images/breadcrumb/br-shape-1.png"
           alt="Shape"
@@ -52,7 +59,7 @@ const PageBanner = ({ pageTitle }: Props) => {
           </div>
         </div>
       </div>
-    </>
+    </main>
   );
 };
 

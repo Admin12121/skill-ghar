@@ -54,7 +54,6 @@ const ServiceDetailsContent = ({ data, servicesList }: ServiceDetailsContentProp
       <div className="row">
         <div className="col-xl-8 pe-xxl-4">
           <div className="service-desc">
-            {/* Hero Image */}
             <div className="single-img round-10 mb-35">
               <Image
                 src={data.heroImage}
@@ -65,19 +64,16 @@ const ServiceDetailsContent = ({ data, servicesList }: ServiceDetailsContentProp
               />
             </div>
 
-            {/* Main Content */}
             <div className="single-para">
               <h1 className="font-secondary">{data.title}</h1>
               <div dangerouslySetInnerHTML={{ __html: data.content }} />
             </div>
 
-            {/* Overview */}
             <div className="single-para">
               <h6>Overview & Challenge</h6>
               <p>{data.overview}</p>
             </div>
 
-            {/* Features Grid */}
             {data.features && data.features.length > 0 && (
               <div className="row justify-content-center mb-2">
                 {data.features.map((feature, index) => (
@@ -98,7 +94,6 @@ const ServiceDetailsContent = ({ data, servicesList }: ServiceDetailsContentProp
               </div>
             )}
 
-            {/* Testimonial Section */}
             {data.testimonial && (
               <div className="row mb-2">
                 <div className="col-xxl-8 col-xl-7 col-lg-8 col-md-7 pe-xl-4">
@@ -139,13 +134,13 @@ const ServiceDetailsContent = ({ data, servicesList }: ServiceDetailsContentProp
 
                 <div className="col-xxl-4 col-xl-5 col-lg-4 col-md-5 ps-xl-0 ps-lg-4 pe-xl-2">
                   <div className="single-img round-10 mb-30">
-                    <Image
+                    {/* <Image
                       src={data.testimonial.image}
                       alt="testimonial"
                       className="round-10"
                       width={570}
                       height={703}
-                    />
+                    /> */}
                   </div>
                 </div>
               </div>
@@ -167,7 +162,6 @@ const ServiceDetailsContent = ({ data, servicesList }: ServiceDetailsContentProp
               </div>
             )}
 
-            {/* FAQ Accordion */}
             <div className="single-para">
               <h6 className="mb-4">Popular Questions</h6>
               <div className="accordion style-one">

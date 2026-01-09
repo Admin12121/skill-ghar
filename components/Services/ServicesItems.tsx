@@ -1,110 +1,87 @@
 "use client";
 
-import React, { useState, useRef } from "react";
+import { useState, useRef, useEffect } from "react";
 import Image from "next/image";
 import Link from "next/link";
+import { fetchServices } from "@/lib/services-actions";
 
-// Define TypeScript interface for our data structure
 interface ServiceItem {
   id: number;
   imageSrc: string;
   title: string;
   description: string;
   linkHref: string;
+  index?: number;
+}
+
+function truncateDescription(text: string, maxLength: number = 120): string {
+  if (text.length <= maxLength) return text;
+  return text.substring(0, maxLength).trim() + "...";
 }
 
 const ServicesItems = () => {
-  // Dynamic data for services
-  const services: ServiceItem[] = [
-    {
-      id: 1,
-      imageSrc: "/images/services/home-renovation.jpg",
-      title: "Home Renovation & Remodeling",
-      description:
-        "We redesign and upgrade homes to improve comfort, style, and usability, whether it is one room or the whole house.",
-      linkHref: "/services/home-renovation",
-    },
-    {
-      id: 2,
-      imageSrc: "/images/services/modular-kitchen.jpg",
-      title: "Modular Kitchen Installation",
-      description:
-        "We create smart, stylish, and practical modular kitchens with quality materials and thoughtful layouts.",
-      linkHref: "/services/modular-kitchen",
-    },
-    {
-      id: 3,
-      imageSrc: "/images/services/water-proofing.jpg",
-      title: "Waterproofing Solutions",
-      description:
-        "We protect your home from leakage and dampness with reliable waterproofing for bathrooms, roofs, walls, and more.",
-      linkHref: "/services/water-proofing",
-    },
-    {
-      id: 4,
-      imageSrc: "/images/services/roofing.jpg",
-      title: "Roofing Installation",
-      description:
-        "We install strong and durable roofing including toughened glass, UPVC, fibre, and polycarbonate options with neat finishing.",
-      linkHref: "/services/roofing",
-    },
-    {
-      id: 5,
-      imageSrc: "/images/services/washroom-remoduling.jpg",
-      title: "Bathroom & Washroom Remodeling",
-      description:
-        "We upgrade bathrooms into clean, modern, and comfortable spaces with proper fittings, layout, and waterproofing.",
-      linkHref: "/services/washroom-remoduling",
-    },
-    {
-      id: 6,
-      imageSrc: "/images/services/electric-and-plumbing.jpg",
-      title: "Electrical & Plumbing Services",
-      description:
-        "We provide safe and reliable electrical and plumbing support for installations, repairs, and maintenance to keep your home running smoothly.",
-      linkHref: "/services/electric-and-plumbing",
-    },
-  ];
+  const [services, setServices] = useState<ServiceItem[]>([]);
+  const [loading, setLoading] = useState(true);
 
-  // Create a ref for the service area container
   const serviceAreaRef = useRef<HTMLDivElement>(null);
 
-  // Pagination state
   const [currentPage, setCurrentPage] = useState(1);
-  const itemsPerPage = 8; // Number of items per page
+  const itemsPerPage = 8; 
 
-  // Calculate pagination values
+
+  useEffect(() => {
+    const loadServices = async () => {
+      try {
+        const servicesList = await fetchServices();
+        const loadedServices: ServiceItem[] = servicesList.map((service) => ({
+          id: service.index ?? 1,
+          imageSrc: `/images/services/${service.slug}.jpg`,
+          title: service.title,
+          description: truncateDescription(service.excerpt || service.title, 120),
+          linkHref: `/services/${service.slug}`,
+          index: service.index,
+        }));
+        setServices(loadedServices);
+      } catch (error) {
+      } finally {
+        setLoading(false);
+      }
+    };
+    
+    loadServices();
+  }, []);
+
   const totalPages = Math.ceil(services.length / itemsPerPage);
   const indexOfLastItem = currentPage * itemsPerPage;
   const indexOfFirstItem = indexOfLastItem - itemsPerPage;
   const currentServices = services.slice(indexOfFirstItem, indexOfLastItem);
 
-  // Function to handle page change
   const handlePageChange = (pageNumber: number) => {
     setCurrentPage(pageNumber);
 
-    // Scroll to top of service area when page changes
     if (serviceAreaRef.current) {
       serviceAreaRef.current.scrollIntoView({ behavior: "smooth" });
     }
   };
 
-  // Generate page numbers for pagination
   const pageNumbers = [];
   for (let i = 1; i <= totalPages; i++) {
     pageNumbers.push(i);
   }
 
-  // Only show pagination if there are more than 6 items (totalPages > 1)
   const showPagination = totalPages > 1;
 
   return (
-    <>
+    <main>
       <div className="service-area ptb-120" ref={serviceAreaRef}>
         <div className="container">
-          <div className="row justify-content-center">
-            {currentServices.map((service) => (
-              <div className="col-xxl-3 col-xl-4 col-md-6" key={service.id}>
+          {loading ? (
+            <div className="text-center py-5">Loading services...</div>
+          ) : (
+            <>
+              <div className="row justify-content-center">
+                {currentServices.map((service) => (
+                  <div className="col-xxl-3 col-xl-4 col-md-6" key={service.id}>
                 <div className="service-card style-two mb-50">
                   <div
                     className={`service-img rounded-two transition`}
@@ -147,7 +124,6 @@ const ServicesItems = () => {
             ))}
           </div>
 
-          {/* pagination - only show if there are more than 6 items */}
           {showPagination && (
             <ul className="page-nav pagination justify-content-center mb-0 mt-lg-4">
               <li className="page-item">
@@ -203,9 +179,11 @@ const ServicesItems = () => {
               </li>
             </ul>
           )}
+            </>
+          )}
         </div>
       </div>
-    </>
+    </main>
   );
 };
 

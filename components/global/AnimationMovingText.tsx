@@ -1,5 +1,3 @@
-import React from "react";
-
 const AnimationMovingText = () => {
   const textItems = [
     "FREE IN-HOME CONSULTATIONS",

@@ -11,6 +11,7 @@ const servicesDirectory = path.join(
 
 export interface ServiceData {
   slug: string;
+  index?: number;
   title: string;
   heroImage: string;
   excerpt: string;
@@ -39,6 +40,9 @@ export interface ServiceData {
 export interface ServiceListItem {
   slug: string;
   title: string;
+  index?: number;
+  excerpt?: string;
+  heroImage?: string;
 }
 
 export async function getServiceBySlug(slug: string): Promise<ServiceData> {
@@ -51,6 +55,7 @@ export async function getServiceBySlug(slug: string): Promise<ServiceData> {
 
   return {
     slug,
+    index: data.index,
     title: data.title,
     heroImage: data.heroImage,
     excerpt: data.excerpt,
@@ -63,21 +68,6 @@ export async function getServiceBySlug(slug: string): Promise<ServiceData> {
   };
 }
 
-export async function getAllServices(): Promise<ServiceData[]> {
-  const fileNames = fs.readdirSync(servicesDirectory);
-
-  const allServices = await Promise.all(
-    fileNames
-      .filter((fileName) => fileName.endsWith(".mdx"))
-      .map(async (fileName) => {
-        const slug = fileName.replace(/\.mdx$/, "");
-        return getServiceBySlug(slug);
-      })
-  );
-
-  return allServices;
-}
-
 export function getAllServiceSlugs() {
   const fileNames = fs.readdirSync(servicesDirectory);
 
@@ -88,11 +78,10 @@ export function getAllServiceSlugs() {
     }));
 }
 
-// New function for service list
 export function getServicesList(): ServiceListItem[] {
   const fileNames = fs.readdirSync(servicesDirectory);
 
-  return fileNames
+  const services = fileNames
     .filter((fileName) => fileName.endsWith(".mdx"))
     .map((fileName) => {
       const fullPath = path.join(servicesDirectory, fileName);
@@ -102,15 +91,23 @@ export function getServicesList(): ServiceListItem[] {
       return {
         slug: fileName.replace(/\.mdx$/, ""),
         title: data.title,
+        index: data.index,
+        excerpt: data.excerpt,
+        heroImage: data.heroImage,
       };
     });
+
+  return services.sort((a, b) => {
+    const aIndex = a.index ?? Infinity;
+    const bIndex = b.index ?? Infinity;
+    return aIndex - bIndex;
+  });
 }
 
-// Function to get services for menu
 export function getServicesForMenu() {
   const fileNames = fs.readdirSync(servicesDirectory);
 
-  return fileNames
+  const services = fileNames
     .filter((fileName) => fileName.endsWith(".mdx"))
     .map((fileName) => {
       const fullPath = path.join(servicesDirectory, fileName);
@@ -121,6 +118,13 @@ export function getServicesForMenu() {
       return {
         label: data.title,
         href: `/services/${slug}`,
+        index: data.index,
       };
     });
+
+  return services.sort((a, b) => {
+    const aIndex = a.index ?? Infinity;
+    const bIndex = b.index ?? Infinity;
+    return aIndex - bIndex;
+  });
 }

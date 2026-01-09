@@ -1,9 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { Home } from "lucide-react";
-import fs from "fs";
-import path from "path";
-import matter from "gray-matter";
+import { getServicesList } from "@/lib/services";
 
 interface ServiceCard {
   id: number;
@@ -12,6 +10,7 @@ interface ServiceCard {
   description: string;
   icon: string;
   link: string;
+  index?: number;
 }
 
 function truncateDescription(text: string, maxLength: number = 80): string {
@@ -19,38 +18,18 @@ function truncateDescription(text: string, maxLength: number = 80): string {
   return text.substring(0, maxLength).trim() + "...";
 }
 
-async function getServicesForCards(): Promise<ServiceCard[]> {
-  const servicesDirectory = path.join(
-    process.cwd(),
-    "features/site/content/services"
-  );
-
-  const fileNames = fs.readdirSync(servicesDirectory);
-  const services: ServiceCard[] = [];
-
-  fileNames
-    .filter((fileName) => fileName.endsWith(".mdx"))
-    .forEach((fileName, index) => {
-      const fullPath = path.join(servicesDirectory, fileName);
-      const fileContents = fs.readFileSync(fullPath, "utf8");
-      const { data } = matter(fileContents);
-      const slug = fileName.replace(/\.mdx$/, "");
-
-      services.push({
-        id: index + 1,
-        counter: String(index + 1).padStart(2, "0"),
-        title: data.title,
-        description: truncateDescription(data.excerpt, 80),
-        icon: data.heroImage,
-        link: `/services/${slug}`,
-      });
-    });
-
-  return services;
-}
-
 export default async function WhatWeOffers() {
-  const serviceData = await getServicesForCards();
+  const servicesList = getServicesList();
+  
+  const serviceData: ServiceCard[] = servicesList.map((service) => ({
+    id: service.index ?? 1,
+    counter: String(service.index ?? 1).padStart(2, "0"),
+    title: service.title,
+    description: truncateDescription(service.excerpt || service.title, 80),
+    icon: service.heroImage || "/images/services/default.jpg",
+    link: `/services/${service.slug}`,
+    index: service.index,
+  }));
 
   return (
     <div className="service-area style-one position-relative z-2 pt-120 pb-90 mx-xxl-4 round-40">
