@@ -9,8 +9,9 @@ import type { Metadata } from "next";
 
 export const metadata: Metadata = createPageMetadata(
   "About Us",
-  "Learn about Skill Griha, our expertise, team, and commitment to delivering professional construction and renovation services.",
-  "/about"
+  "Discover Skill Griha - Nepal's leading construction and renovation company. Meet our expert team, learn about our 15+ years of experience, and see why we're trusted for quality home improvement projects across Nepal.",
+  "/about",
+  ["about skill griha", "construction company Nepal", "renovation experts", "building contractors", "home improvement specialists", "trusted builders Nepal"]
 );
 
 export default function Page() {

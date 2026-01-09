@@ -37,7 +37,7 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
     
     return createServiceMetadata(
       service.title,
-      service.excerpt || service.title,
+      service.excerpt || `Professional ${service.title.toLowerCase()} services in Nepal by Skill Griha. Expert solutions, quality workmanship, and affordable prices for all your construction and renovation needs.`,
       slug
     );
   } catch (error) {

@@ -5,9 +5,10 @@ import { createPageMetadata } from "@/config/metadata";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = createPageMetadata(
-  "Projects",
-  "View our portfolio of completed construction and renovation projects showcasing our expertise and quality workmanship.",
-  "/projects"
+  "Our Projects",
+  "Explore Skill Griha's portfolio of completed construction and renovation projects. See real transformations including home renovations, modular kitchens, bathroom remodeling, and roofing installations. Quality work that speaks for itself.",
+  "/projects",
+  ["construction projects Nepal", "renovation portfolio", "completed projects", "home transformation", "before after renovation", "construction work gallery", "building projects"]
 );
 
 export default async function Page() {

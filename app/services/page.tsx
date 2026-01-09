@@ -4,9 +4,10 @@ import { createPageMetadata } from "@/config/metadata";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = createPageMetadata(
-  "Services",
-  "Professional building construction and renovation services including home renovation, modular kitchens, waterproofing, roofing, washroom remodeling, and electrical & plumbing services.",
-  "/services"
+  "Our Services",
+  "Comprehensive construction and renovation services in Nepal. Expert solutions for home renovation, modular kitchen installation, waterproofing, roofing, bathroom remodeling, and electrical & plumbing work. Affordable prices, quality guaranteed.",
+  "/services",
+  ["construction services Nepal", "home renovation services", "modular kitchen Nepal", "waterproofing contractor", "roofing services", "bathroom renovation", "electrical plumbing work", "building services"]
 );
 
 export default function Page() {

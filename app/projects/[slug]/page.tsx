@@ -1,7 +1,7 @@
 import PageBanner from "@/components/global/PageBanner";
 import ProjectDetailsContent from "@/components/Projects/ProjectDetailsContent";
 import { getProjectBySlug, getAllProjectSlugs, getProjectsList } from "@/lib/projects";
-import { createPageMetadata } from "@/config/metadata";
+import { createProjectMetadata } from "@/config/metadata";
 import { notFound } from "next/navigation";
 import type { Metadata } from "next";
 
@@ -36,10 +36,10 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   try {
     const project = await getProjectBySlug(slug);
     
-    return createPageMetadata(
+    return createProjectMetadata(
       project.title,
-      project.excerpt || project.title,
-      `/projects/${slug}`
+      project.excerpt || `View details of ${project.title} - a completed construction and renovation project by Skill Griha showcasing our expertise and quality workmanship.`,
+      slug
     );
   } catch (error) {
     return {
