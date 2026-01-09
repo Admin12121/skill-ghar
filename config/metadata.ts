@@ -18,7 +18,7 @@ const siteConfig = {
     "Skill Griha"
   ],
   url: "https://skillgriha.com",
-  ogImage: "/images/og.jpg",
+  ogImage: "https://skillgriha.com/images/og.jpg",
   social: {
     facebook: "https://www.facebook.com/profile.php?id=61586108699236",
     instagram: "https://www.instagram.com/skill_griha/",

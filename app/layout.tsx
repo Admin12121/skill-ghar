@@ -42,6 +42,7 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  console.log(metadata)
   const services = getServicesForMenu();
   const menus = staticMenus.map((menu) => {
     if (menu.id === "services") {
