@@ -152,7 +152,6 @@ const WhoWeAre = () => {
           </div>
         </div>
       </div>
-    </div>
   );
 };
 
