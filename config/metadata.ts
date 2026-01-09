@@ -27,20 +27,27 @@ const siteConfig = {
 };
 
 export const defaultMetadata: Metadata = {
+  metadataBase: new URL(siteConfig.url),
+  alternates: {
+    canonical: "/",
+  },
   title: {
+    template: `%s – ${siteConfig.name}`,
     default: siteConfig.title,
-    template: `%s | ${siteConfig.name}`,
   },
   description: siteConfig.description,
   keywords: siteConfig.keywords,
-  authors: [{ name: siteConfig.name }],
+  authors: [
+    {
+      name: siteConfig.name,
+      url: siteConfig.url,
+    },
+  ],
   creator: siteConfig.name,
-  metadataBase: new URL(siteConfig.url),
   openGraph: {
-    type: "website",
-    locale: "en_US",
-    url: siteConfig.url,
     siteName: siteConfig.name,
+    url: siteConfig.url,
+    type: "website",
     title: siteConfig.title,
     description: siteConfig.description,
     images: [
@@ -48,35 +55,16 @@ export const defaultMetadata: Metadata = {
         url: siteConfig.ogImage,
         width: 1200,
         height: 630,
-        alt: `${siteConfig.name} - Home Renovation & Construction Services`,
-        type: "image/jpeg",
+        alt: siteConfig.name,
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
+    creator: "@skill_griha",
     title: siteConfig.title,
     description: siteConfig.description,
     images: [siteConfig.ogImage],
-    creator: "@skill_griha",
-  },
-  robots: {
-    index: true,
-    follow: true,
-    googleBot: {
-      index: true,
-      follow: true,
-      "max-video-preview": -1,
-      "max-image-preview": "large",
-      "max-snippet": -1,
-    },
-  },
-  alternates: {
-    canonical: siteConfig.url,
-  },
-  verification: {
-    google: "",
-    yandex: "",
   },
 };
 
@@ -89,40 +77,34 @@ export const createPageMetadata = (
   const url = `${siteConfig.url}${path}`;
 
   return {
+    metadataBase: new URL(siteConfig.url),
+    alternates: {
+      canonical: url,
+    },
     title,
     description,
     keywords: keywords || siteConfig.keywords,
-    metadataBase: new URL(siteConfig.url),
     openGraph: {
-      type: "website",
-      locale: "en_US",
-      url,
       siteName: siteConfig.name,
-      title: `${title} | ${siteConfig.name}`,
+      url,
+      type: "website",
+      title,
       description,
       images: [
         {
           url: siteConfig.ogImage,
           width: 1200,
           height: 630,
-          alt: `${title} - ${siteConfig.name}`,
-          type: "image/jpeg",
+          alt: siteConfig.name,
         },
       ],
     },
     twitter: {
       card: "summary_large_image",
-      title: `${title} | ${siteConfig.name}`,
+      creator: "@skill_griha",
+      title,
       description,
       images: [siteConfig.ogImage],
-      creator: "@skill_griha",
-    },
-    robots: {
-      index: true,
-      follow: true,
-    },
-    alternates: {
-      canonical: url,
     },
   };
 };
@@ -141,40 +123,34 @@ export const createServiceMetadata = (
   ];
 
   return {
+    metadataBase: new URL(siteConfig.url),
+    alternates: {
+      canonical: url,
+    },
     title: `${title} Services`,
     description,
     keywords: serviceKeywords,
-    metadataBase: new URL(siteConfig.url),
     openGraph: {
-      type: "website",
-      locale: "en_US",
-      url,
       siteName: siteConfig.name,
-      title: `${title} Services | ${siteConfig.name}`,
+      url,
+      type: "website",
+      title: `${title} Services`,
       description,
       images: [
         {
           url: siteConfig.ogImage,
           width: 1200,
           height: 630,
-          alt: `${title} Services - ${siteConfig.name}`,
-          type: "image/jpeg",
+          alt: `${title} Services`,
         },
       ],
     },
     twitter: {
       card: "summary_large_image",
-      title: `${title} Services | ${siteConfig.name}`,
+      creator: "@skill_griha",
+      title: `${title} Services`,
       description,
       images: [siteConfig.ogImage],
-      creator: "@skill_griha",
-    },
-    robots: {
-      index: true,
-      follow: true,
-    },
-    alternates: {
-      canonical: url,
     },
   };
 };
@@ -193,40 +169,34 @@ export const createProjectMetadata = (
   ];
 
   return {
+    metadataBase: new URL(siteConfig.url),
+    alternates: {
+      canonical: url,
+    },
     title,
     description,
     keywords: projectKeywords,
-    metadataBase: new URL(siteConfig.url),
     openGraph: {
-      type: "website",
-      locale: "en_US",
-      url,
       siteName: siteConfig.name,
-      title: `${title} | ${siteConfig.name}`,
+      url,
+      type: "website",
+      title,
       description,
       images: [
         {
           url: siteConfig.ogImage,
           width: 1200,
           height: 630,
-          alt: `${title} - ${siteConfig.name}`,
-          type: "image/jpeg",
+          alt: siteConfig.name,
         },
       ],
     },
     twitter: {
       card: "summary_large_image",
-      title: `${title} | ${siteConfig.name}`,
+      creator: "@skill_griha",
+      title,
       description,
       images: [siteConfig.ogImage],
-      creator: "@skill_griha",
-    },
-    robots: {
-      index: true,
-      follow: true,
-    },
-    alternates: {
-      canonical: url,
     },
   };
 };
