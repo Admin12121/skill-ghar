@@ -76,7 +76,7 @@ Skill Griha Team
             <p><strong>Your submitted details:</strong></p>
             <p>Subject: ${subject}</p>
           </div>
-          <p style="font-size: 14px; color: #777; margin-top: 30px;">Best regards,<br><strong>Edifico Team</strong></p>
+          <p style="font-size: 14px; color: #777; margin-top: 30px;">Best regards,<br><strong>Skill Griha Team</strong></p>
         </div>
       `,
     };

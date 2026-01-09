@@ -120,7 +120,7 @@ const ContactForm = ({ services }: ContactFormProps) => {
           <div className="col-lg-6 mb-md-20">
             <h2 className="section-title style-one text-title mb-30">
               Contact{" "}
-              <span className="fw-black">Edifico Today And Take The First</span>{" "}
+              <span className="fw-black">Skill Griha Today And Take The First</span>{" "}
               Step Forward
             </h2>
 

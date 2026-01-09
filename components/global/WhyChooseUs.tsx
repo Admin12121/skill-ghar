@@ -29,7 +29,7 @@ const WhyChooseUs = () => {
   const ceoMessage = {
     image: "/images/about/ceo.jpg",
     quote:
-      "Edifico delivered on every promise. The crew was professional, the timeline custom home turned out exactly envisioned.",
+      "Skill Griha delivered on every promise. The crew was professional, the timeline custom home turned out exactly envisioned.",
     name: "Natalie R.",
     title: "Denver, CEO",
   };
@@ -69,7 +69,7 @@ const WhyChooseUs = () => {
                 </h2>
 
                 <p className="pe-xxl-5 me-xxl-5 mb-1">
-                  Edifico means partnering with team that values customer
+                  Skill Griha means partnering with team that values customer
                   satisfaction above all else. We bring years of experience and
                   a proven
                 </p>

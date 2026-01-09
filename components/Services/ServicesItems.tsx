@@ -18,7 +18,7 @@ const ServicesItems = () => {
   const services: ServiceItem[] = [
     {
       id: 1,
-      imageSrc: "/images/services/service-1.jpg",
+      imageSrc: "/images/services/home-renovation.jpg",
       title: "Home Renovation & Remodeling",
       description:
         "We redesign and upgrade homes to improve comfort, style, and usability, whether it is one room or the whole house.",
@@ -26,7 +26,7 @@ const ServicesItems = () => {
     },
     {
       id: 2,
-      imageSrc: "/images/services/service-2.jpg",
+      imageSrc: "/images/services/modular-kitchen.jpg",
       title: "Modular Kitchen Installation",
       description:
         "We create smart, stylish, and practical modular kitchens with quality materials and thoughtful layouts.",
@@ -34,7 +34,7 @@ const ServicesItems = () => {
     },
     {
       id: 3,
-      imageSrc: "/images/services/service-3.jpg",
+      imageSrc: "/images/services/water-proofing.jpg",
       title: "Waterproofing Solutions",
       description:
         "We protect your home from leakage and dampness with reliable waterproofing for bathrooms, roofs, walls, and more.",
@@ -42,7 +42,7 @@ const ServicesItems = () => {
     },
     {
       id: 4,
-      imageSrc: "/images/services/service-4.jpg",
+      imageSrc: "/images/services/roofing.jpg",
       title: "Roofing Installation",
       description:
         "We install strong and durable roofing including toughened glass, UPVC, fibre, and polycarbonate options with neat finishing.",
@@ -50,7 +50,7 @@ const ServicesItems = () => {
     },
     {
       id: 5,
-      imageSrc: "/images/services/service-5.jpg",
+      imageSrc: "/images/services/washroom-remoduling.jpg",
       title: "Bathroom & Washroom Remodeling",
       description:
         "We upgrade bathrooms into clean, modern, and comfortable spaces with proper fittings, layout, and waterproofing.",
@@ -58,7 +58,7 @@ const ServicesItems = () => {
     },
     {
       id: 6,
-      imageSrc: "/images/services/service-6.jpg",
+      imageSrc: "/images/services/electric-and-plumbing.jpg",
       title: "Electrical & Plumbing Services",
       description:
         "We provide safe and reliable electrical and plumbing support for installations, repairs, and maintenance to keep your home running smoothly.",
@@ -89,62 +89,6 @@ const ServicesItems = () => {
     }
   };
 
-  // Function to determine image style class based on service ID
-  const getImageStyleClass = (id: number): string => {
-    switch (id) {
-      case 1:
-        return "semiround-left";
-      case 2:
-        return "rounded-corner";
-      case 3:
-        return "semiround-right";
-      case 4:
-        return "rounded-circle";
-      case 5:
-        return "rounded-corner";
-      case 6:
-        return "rounded-two";
-      case 7:
-        return "rounded-circle";
-      case 8:
-        return "rounded-two";
-      case 9:
-        return "semiround-left";
-      case 10:
-        return "rounded-corner";
-      case 11:
-        return "semiround-right";
-      case 12:
-        return "rounded-circle";
-      case 13:
-        return "rounded-corner";
-      case 14:
-        return "rounded-two";
-      case 15:
-        return "rounded-circle";
-      case 16:
-        return "rounded-two";
-      case 17:
-        return "semiround-left";
-      case 18:
-        return "rounded-corner";
-      case 19:
-        return "semiround-right";
-      case 20:
-        return "rounded-circle";
-      case 21:
-        return "rounded-corner";
-      case 22:
-        return "rounded-two";
-      case 23:
-        return "rounded-circle";
-      case 24:
-        return "rounded-two";
-      default:
-        return "rounded-corner"; // Default class
-    }
-  };
-
   // Generate page numbers for pagination
   const pageNumbers = [];
   for (let i = 1; i <= totalPages; i++) {
@@ -163,9 +107,7 @@ const ServicesItems = () => {
               <div className="col-xxl-3 col-xl-4 col-md-6" key={service.id}>
                 <div className="service-card style-two mb-50">
                   <div
-                    className={`service-img ${getImageStyleClass(
-                      service.id
-                    )} transition`}
+                    className={`service-img rounded-two transition`}
                   >
                     <Image
                       src={service.imageSrc}

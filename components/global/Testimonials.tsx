@@ -22,21 +22,21 @@ const TestimonialsStyle2 = () => {
     {
       id: 1,
       quote:
-        "From the first consultation to the final reveal, Edifico made our exciting. They truly listened to our ideas and brought them to life with incredible attention to detail.",
+        "From the first consultation to the final reveal, Skill Griha made our exciting. They truly listened to our ideas and brought them to life with incredible attention to detail.",
       authorName: "Prakash Sharma",
       authorRole: "Manager",
     },
     {
       id: 2,
       quote:
-        "They truly listened to our ideas and brought them to life with incredible attention to detail.From the first consultation to the final reveal, Edifico made our exciting.",
+        "They truly listened to our ideas and brought them to life with incredible attention to detail.From the first consultation to the final reveal, Skill Griha made our exciting.",
       authorName: "Yamuna Sherapa",
       authorRole: "Entreprenuer",
     },
     {
       id: 3,
       quote:
-        "Awosome services from first consultation to the final reveal, Edifico made us amazed. They truly listened to our ideas and brought them live with incredible attention to detail.",
+        "Awosome services from first consultation to the final reveal, Skill Griha made us amazed. They truly listened to our ideas and brought them live with incredible attention to detail.",
       authorName: "Suresh Karki",
       authorRole: "Teacher",
     },
